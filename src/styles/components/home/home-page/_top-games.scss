@@ -1,0 +1,148 @@
+.top_games_component {
+  margin-top: 4rem;
+
+  .row {
+    height: 100%;
+
+    & > div:not(:last-child) {
+      border-right: 0.1rem solid rgba($light-color-1, 30%);
+    }
+
+    & > div {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .title_container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .title {
+        margin: 0;
+        color: $light-color-2;
+        font-size: $font-size-1;
+        font-family: 'Roboto Flex', sans-serif;
+      }
+
+      button {
+        height: 3.2rem;
+        font-size: 1.2rem;
+        width: 10rem;
+        text-transform: uppercase;
+      }
+    }
+
+    .game_card_container {
+      .game_card:first-child {
+        margin-top: 1rem;
+      }
+
+      .game_card {
+        padding-left: 1.5rem;
+        height: 10rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+        color: white;
+        position: relative;
+
+        display: flex;
+        justify-content: start;
+        align-items: center;
+
+        &:hover {
+          background-color: $light-color-1;
+        }
+
+        .game_image_container {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .game_image {
+            background-color: #7BC74D;
+            height: 80%;
+            width: 6.5rem;
+            border-radius: 8px;
+          }
+        }
+
+        .game_description_container {
+          margin-left: 1.8rem;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: start;
+
+          .game_title {
+            margin: 0;
+            font-size: $font-size-4;
+            line-height: 25px;
+            font-family: 'Roboto Flex', sans-serif;
+          }
+
+          .game_validity {
+            margin: 0;
+            font-size: $font-size-4;
+            line-height: 25px;
+            font-family: 'Roboto Flex', sans-serif;
+          }
+
+          .game_price {
+            margin: 0;
+            font-size: $font-size-5;
+            line-height: 25px;
+            font-family: 'Roboto Flex', sans-serif;
+          }
+        }
+
+        .add_icon_container {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 1.5rem;
+          background-color: #222831;
+          width: 3rem;
+          height: 3rem;
+          border-radius: 8px;
+          border: 1px solid $light-color-2;
+          display: none;
+
+          justify-content: center;
+          align-items: center;
+          transition: 0.3s all;
+
+          .add_icon {
+            color: $light-color-2;
+            font-size: $font-size-3;
+            height: max-content;
+            width: max-content;
+          }
+
+          &:hover {
+            cursor: pointer;
+            background-color: $light-color-2;
+
+            .add_icon {
+              color: $dark-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .free_now_class {
+    color: $light-color-2;
+  }
+
+  .comming_soon_class {
+    color: $light-color-4;
+  }
+}
+
+

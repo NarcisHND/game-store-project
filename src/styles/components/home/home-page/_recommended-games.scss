@@ -1,0 +1,169 @@
+.recommended_games_component {
+  height: min-content;
+  font-family: 'Roboto Flex', sans-serif;
+
+  // First Col
+  .rec_games_carousel_col {
+    padding-left: 0;
+
+    .carousel-item {
+      height: 62rem;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+
+      img {
+        width: 100%;
+        min-height: 100%;
+        border-radius: 15px;
+      }
+
+      .rec_games_description_container {
+        position: absolute;
+        left: 4rem;
+        bottom: 4rem;
+        width: 45rem;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 100px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        border-radius: 10px;
+        padding: 10px;
+        animation: fadeIn 5s;
+
+        .rec_games_description_term {
+          color: white;
+          font-size: $font-size-4;
+          text-transform: uppercase;
+        }
+
+        .rec_games_description_text {
+          line-height: 1.5;
+          color: white;
+          font-size: $font-size-3-4;
+          width: 35rem;
+        }
+
+        .rec_games_description_price {
+          color: white;
+          font-size: $font-size-3-4;
+          margin: 0;
+        }
+
+        .rec_games_description_btn_container {
+          display: flex;
+          flex-direction: row;
+
+          button {
+            font-size: $font-size-5;
+            text-transform: uppercase;
+            width: 18rem;
+            height: 5rem;
+            margin-right: 1rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            mat-icon {
+              margin-right: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Second Col
+  .rec_games_cards_col {
+    padding-right: 0;
+    padding-left: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .rec_games_card_container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 10rem;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 100%;
+
+      .rec_games_img_container {
+        height: 8rem;
+        width: 10rem;
+        overflow: hidden;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+
+        img {
+          height: 100%;
+          border-radius: 10px;
+          text-align: center;
+        }
+      }
+
+      .rec_games_title {
+        width: 100%;
+        line-height: 1.5;
+        font-size: $font-size-4;
+        color: $light-color-2;
+        margin-left: 2rem;
+        margin-bottom: 0;
+        font-family: inherit;
+      }
+
+      &:hover {
+        background-color: $light-color-1;
+        cursor: pointer;
+      }
+    }
+
+    .active_card {
+      background-color: $light-color-1;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .recommended_games_component {
+    .rec_games_carousel_col {
+      padding-right: 0 !important;
+
+      .carousel-item {
+        height: auto !important;
+        align-items: center !important;
+        flex-direction: column !important;
+
+        .rec_games_description_container {
+          position: relative !important;
+          left: 0 !important;
+          bottom: 0 !important;
+          width: 100% !important;
+
+          .rec_games_description_btn_container {
+            flex-direction: column !important;
+
+            button {
+              width: 100% !important;
+
+              &:last-child {
+                margin-top: 1rem !important;
+              }
+            }
+          }
+        }
+
+        img {
+          min-height: auto !important;
+        }
+      }
+    }
+
+    .rec_games_cards_col {
+      margin-top: 1rem !important;
+      padding-left: 0 !important;
+    }
+  }
+}

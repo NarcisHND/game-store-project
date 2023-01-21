@@ -1,0 +1,87 @@
+<div class="container top_games_component">
+  <div class="row">
+    <div class="col-4">
+      <div class="title_container">
+        <h2 class="title">Top Sellers</h2>
+        <button class="btn btn-outline-light">View More</button>
+      </div>
+      <div class="game_card_container" *ngFor="let game of topSellers">
+
+        <div class="game_card" appHoverGameCard *ngIf="!firstLoading && !secondLoading">
+          <div class="game_image_container">
+            <div class="add_icon_container">
+              <mat-icon class="add_icon">add</mat-icon>
+            </div>
+            <img class="game_image" src="{{game.image}}" alt="{{game.name}}">
+          </div>
+          <div class="game_description_container">
+            <h2 class="game_title">{{game.name}}</h2>
+            <p class="game_price">RON {{game.price}}</p>
+          </div>
+        </div>
+
+        <!--        Placeholder Cards-->
+        <div class="game_card placeholder-wave" style="background-color: #393E46" *ngIf="firstLoading && secondLoading">
+          <div class="game_image_container"></div>
+          <div class="game_description_container"></div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="title_container">
+        <h2 class="title">Most Played</h2>
+        <button class="btn btn-outline-light">View More</button>
+      </div>
+      <div class="game_card_container" *ngFor="let game of mostPlayed">
+
+        <div class="game_card" appHoverGameCard *ngIf="!firstLoading && !secondLoading">
+          <div class="game_image_container">
+            <div class="add_icon_container">
+              <mat-icon class="add_icon">add</mat-icon>
+            </div>
+            <img class="game_image" src="{{game.image}}" alt="{{game.name}}">
+          </div>
+          <div class="game_description_container">
+            <h2 class="game_title">{{game.name}}</h2>
+            <p class="game_price">RON {{game.price}}</p>
+          </div>
+        </div>
+
+        <!--        Placeholder Cards-->
+        <div class="game_card placeholder-wave" style="background-color: #393E46" *ngIf="firstLoading && secondLoading">
+          <div class="game_image_container"></div>
+          <div class="game_description_container"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="title_container">
+        <h2 class="title">Top Upcoming Wishlisted</h2>
+        <button class="btn btn-outline-light">View More</button>
+      </div>
+      <div class="game_card_container" *ngFor="let game of topUpcoming">
+
+        <div class="game_card" appHoverGameCard *ngIf="!firstLoading && !secondLoading">
+          <div class="game_image_container">
+            <div class="add_icon_container">
+              <mat-icon class="add_icon">add</mat-icon>
+            </div>
+            <img class="game_image" src="{{game.image}}" alt="{{game.name}}">
+          </div>
+          <div class="game_description_container">
+            <h2 class="game_title">{{game.name}}</h2>
+            <p class="game_price"
+               [ngClass]="{'comming_soon_class' : game.validity === 'Coming Soon', 'free_now_class' : game.validity === 'Free Now'}">{{game.validity}}</p>
+          </div>
+        </div>
+
+        <!--        Placeholder Cards-->
+        <div class="game_card placeholder-wave" style="background-color: #393E46" *ngIf="firstLoading && secondLoading">
+          <div class="game_image_container"></div>
+          <div class="game_description_container"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

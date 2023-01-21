@@ -1,0 +1,23 @@
+<div class="container free_games_component">
+  <div class="free_games_container">
+    <div class="free_games_header">
+      <div class="free_games_section_title">
+        <div class="free_games_icon_container">
+          <mat-icon class="free_games_icon">card_giftcard</mat-icon>
+        </div>
+        <h2 class="free_games_title">Free Games</h2>
+      </div>
+      <button class="btn btn-outline-light">View More</button>
+    </div>
+    <div class="free_games_grid_section">
+      <div class="free_games_card_col" *ngFor="let game of freeRandomGames">
+        <app-game-card
+          [freeGames]="game"
+          [cardType]="'freeGames'"
+          [cardStyle]="{width: '250px', height: '420px'}"
+          [placeholderCard]="loading"
+        ></app-game-card>
+      </div>
+    </div>
+  </div>
+</div>

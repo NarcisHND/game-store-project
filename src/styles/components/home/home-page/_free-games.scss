@@ -1,0 +1,75 @@
+.free_games_component {
+  margin-top: 4rem;
+
+  .free_games_container {
+    display: grid;
+    grid-auto-flow: row;
+    padding: 3rem;
+    background-color: $light-color-1;
+
+    .free_games_header {
+      display: flex;
+      flex-direction: row;
+      padding-left: 4.8rem;
+      padding-right: 4.8rem;
+      justify-content: space-between;
+      align-items: center;
+
+      .free_games_section_title {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s all;
+        color: $light-color-2;
+        cursor: pointer;
+
+        .free_games_icon_container {
+          height: 4rem;
+          margin-right: 1rem;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+          .free_games_icon {
+            font-size: $font-size-1;
+          }
+        }
+
+        .free_games_title {
+          margin-bottom: 0;
+          margin-left: 0.5rem;
+          font-size: $font-size-1;
+        }
+
+        &:hover {
+          color: $light-color-3;
+          transform: translateY(-0.5rem);
+        }
+      }
+
+      button {
+        height: 3.5rem;
+        width: 13rem;
+        font-size: $font-size-4;
+        text-transform: uppercase;
+      }
+    }
+
+    .free_games_grid_section {
+      display: grid;
+      grid-template-rows: auto;
+      justify-content: center;
+      grid-template-columns: repeat(4, 280px);
+      gap: 2rem;
+    }
+  }
+
+  .free_games_card_col {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

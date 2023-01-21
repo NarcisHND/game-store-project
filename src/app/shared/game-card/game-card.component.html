@@ -1,0 +1,71 @@
+<div class="card game_card_component carouselCard hoverCard add_Fade_effects" appHoverGameCard
+     *ngIf="cardType === 'carouselCard' && !placeholderCard"
+     [ngStyle]="cardStyle">
+  <div class="container_img">
+    <div class="add_icon_container">
+      <mat-icon class="add_icon">add</mat-icon>
+    </div>
+    <img src="{{cardData?.image}}" alt="{{cardData?.name}}">
+  </div>
+  <div class="card-body">
+    <div class="container_title">
+      <h5 class="card-title">{{cardData?.name}}</h5>
+    </div>
+    <p class="card-text">RON {{cardData?.price}}</p>
+  </div>
+</div>
+
+<!--Placeholder Cards-->
+<div class="card game_card_component carouselCard hoverCard placeholder-wave" style="background-color: #393E46"
+     *ngIf="cardType === 'carouselCard' && placeholderCard"
+     [ngStyle]="cardStyle">
+  <div class="container_img"></div>
+  <div class="card-body"></div>
+</div>
+
+<div class="card game_card_component detailsGameCard hoverCard add_Fade_effects" appHoverGameCard
+     *ngIf="cardType === 'landScapeGames' && !placeholderCard">
+  <div class="container_img">
+    <div class="add_icon_container">
+      <mat-icon class="add_icon">add</mat-icon>
+    </div>
+    <img src="{{cardData?.image}}" alt="{{cardData?.name}}">
+  </div>
+  <div class="card-body">
+    <div class="container_title">
+      <h2 class="card-title">{{cardData.name}}</h2>
+      <p class="card_description">{{cardData.description}}</p>
+      <p class="card_price">RON {{cardData.price}}</p>
+    </div>
+  </div>
+</div>
+
+<!--Placeholder Cards-->
+<div class="card game_card_component detailsGameCard hoverCard placeholder-wave" style="background-color: #393E46"
+     *ngIf="cardType === 'landScapeGames' && placeholderCard">
+  <div class="container_img"></div>
+  <div class="card-body"></div>
+</div>
+
+<div class="card game_card_component freeGameCard add_Fade_effects"
+     [ngStyle]="cardStyle" *ngIf="cardType === 'freeGames' && !placeholderCard">
+  <div class="container_img">
+    <img src="{{cardData?.image}}" alt="{{cardData?.name}}">
+    <div class="date_release_container" [ngClass]="cardData.validity === 'Free now' ? 'freeNow' : 'comingSoon'">
+      <h3 class="date_release">{{cardData?.validity}}</h3>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="container_title">
+      <h5 class="card-title">{{cardData?.name}}</h5>
+    </div>
+    <p class="card-text">{{cardData?.date}}</p>
+  </div>
+</div>
+
+<!--Placeholder Cards-->
+<div class="card game_card_component freeGameCard add_Fade_effects placeholder-wave" style="background-color: #393E46"
+     [ngStyle]="cardStyle" *ngIf="cardType === 'freeGames' && placeholderCard">
+  <div class="container_img"></div>
+  <div class="card-body"></div>
+</div>

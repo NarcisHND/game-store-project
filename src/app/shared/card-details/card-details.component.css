@@ -1,0 +1,14 @@
+.container {
+  margin-top: 4rem;
+}
+.container .row {
+  height: 100%;
+}
+
+@media screen and (max-width: 992px) {
+  .card_container_col:not(:first-child) {
+    margin-top: 3rem;
+  }
+}
+
+/*# sourceMappingURL=card-details.component.css.map */

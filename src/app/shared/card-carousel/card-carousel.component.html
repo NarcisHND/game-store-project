@@ -1,0 +1,31 @@
+<div class="container card_carousel_component">
+  <div class="row">
+    <div class="col-12">
+      <section class="section_title_container">
+        <h2 class="section_title">{{sectionTitle}}</h2>
+        <div class="button-area">
+          <div class="prev" appPrev>
+            <mat-icon>navigate_before</mat-icon>
+          </div>
+          <div class="next" appNext>
+            <mat-icon>navigate_next</mat-icon>
+          </div>
+        </div>
+      </section>
+      <section class="product">
+        <div class="slider-wrap">
+          <div class="slider-main">
+            <app-game-card
+              class="item"
+              *ngFor="let game of cardData"
+              [allGames]="game"
+              [cardType]="'carouselCard'"
+              [cardStyle]="{'min-width': '230px', 'height': '395px'}"
+              [placeholderCard]="loadingCarouselGames"
+            ></app-game-card>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

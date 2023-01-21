@@ -1,0 +1,60 @@
+<div class="container-fluid recommended_games_component">
+  <div class="container">
+    <div class="row" *ngIf="!loading">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 rec_games_carousel_col">
+        <div class="rec_games_carousel_container">
+          <div id="carouselExampleFade" class="carousel slide carousel-fade">
+            <div class="carousel-inner add_Fade_effects">
+              <div class="carousel-item" *ngFor="let game of gamesData" appHoverCarousel>
+                <img class="d-block" src="{{game.image}}">
+                <div class="rec_games_description_container">
+                  <h2 class="rec_games_description_term">{{game.validity}}</h2>
+                  <p class="rec_games_description_text">{{game.description}}</p>
+                  <h2
+                    class="rec_games_description_price">{{game.price === 'free' ? 'This Game is Free' : 'Starting at RON ' + game.price}}</h2>
+                  <div class="rec_games_description_btn_container">
+                    <button class="btn btn-light">{{game.price === 'free' ? 'Play for Free' : 'Buy Now'}}</button>
+                    <button class="btn btn-outline-light">
+                      <mat-icon>add_circle_outline</mat-icon>
+                      Add to wishlist
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 rec_games_cards_col" appRecGamesCarousel>
+        <div class="rec_games_card_container add_Fade_effects" *ngFor="let game of gamesData" appSelectGameHtmlElement>
+          <div class="rec_games_img_container">
+            <img src="{{game.image}}">
+          </div>
+          <h2 class="rec_games_title">{{game.name}}</h2>
+        </div>
+      </div>
+    </div>
+
+    <!--    Placeholder Cards-->
+    <div class="row" *ngIf="loading">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 rec_games_carousel_col">
+        <div class="rec_games_carousel_container">
+          <div id="carouselExampleFade2" class="carousel slide carousel-fade">
+            <div class="carousel-inner placeholder-wave" style="background-color: #393E46">
+              <div class="carousel-item ">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 rec_games_cards_col">
+        <div class="rec_games_card_container placeholder-wave" style="background-color: #393E46"></div>
+        <div class="rec_games_card_container placeholder-wave mt-5" style="background-color: #393E46"></div>
+        <div class="rec_games_card_container placeholder-wave mt-5" style="background-color: #393E46"></div>
+        <div class="rec_games_card_container placeholder-wave mt-5" style="background-color: #393E46"></div>
+        <div class="rec_games_card_container placeholder-wave mt-5" style="background-color: #393E46"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
