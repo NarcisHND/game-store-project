@@ -5,7 +5,7 @@ import {
   ViewChild,
   AfterViewInit,
 } from '@angular/core';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -15,15 +15,13 @@ import {Router} from '@angular/router';
 export class NavbarComponent implements OnInit, AfterViewInit {
   @ViewChild('searchInp') inputS!: ElementRef;
   public selectGame: string | undefined;
+  public test!: string;
 
-  constructor(private route: Router) {
-  }
+  constructor(private route: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  ngAfterViewInit() {
-  }
+  ngAfterViewInit() {}
 
   searchGame() {
     this.selectGame = this.inputS.nativeElement.value;
