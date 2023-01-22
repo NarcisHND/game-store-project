@@ -1,15 +1,15 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {GameInterfaceModel} from "../../../../../services/interface/game-interface.model";
-import {GamesDataService} from "../../../../../services/games-data.service";
+import {GamesDataService} from "../../../../../../services/games-data.service";
+import {FreeGameInterfaceModel} from "../../../../../../services/interface/free-game-interface.model";
 import {Subscription} from "rxjs";
 
 @Component({
-  selector: 'app-popular-games',
-  templateUrl: './popular-games.component.html',
-  styleUrls: ['./popular-games.component.scss']
+  selector: 'app-free-games',
+  templateUrl: './free-games.component.html',
+  styleUrls: ['./free-games.component.scss']
 })
-export class PopularGamesComponent implements OnInit, OnDestroy {
-  public carouselRandomGames: GameInterfaceModel[] = [];
+export class FreeGamesComponent implements OnInit, OnDestroy {
+  public freeRandomGames!: FreeGameInterfaceModel[];
   private subscription!: Subscription;
   public loading: boolean = false;
 
@@ -22,16 +22,16 @@ export class PopularGamesComponent implements OnInit, OnDestroy {
 
   loadData() {
     this.loading = true;
-    this.subscription = this.gamesDataService.getGames().subscribe({
+    this.subscription = this.gamesDataService.getFreeGames().subscribe({
       next: (res) => {
-        this.carouselRandomGames = this.gamesDataService.selectAllRandomGames(10, res);
+        this.freeRandomGames = this.gamesDataService.selectFreeRandomGames(4, res);
         this.loading = false;
       },
       error: (err) => {
         console.log(err);
         this.loading = false;
       }
-    });
+    })
   }
 
   ngOnDestroy() {

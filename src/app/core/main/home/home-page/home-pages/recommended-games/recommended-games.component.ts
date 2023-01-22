@@ -3,8 +3,8 @@ import {
   OnDestroy,
   OnInit
 } from '@angular/core';
-import {GamesDataService} from "../../../../../services/games-data.service";
-import {RecommendedGameInterfaceModel} from "../../../../../services/interface/recommended-game-interface.model";
+import {GamesDataService} from "../../../../../../services/games-data.service";
+import {RecommendedGameInterfaceModel} from "../../../../../../services/interface/recommended-game-interface.model";
 import {Subscription} from "rxjs";
 
 @Component({
