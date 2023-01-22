@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {GamesDataService} from "../../../../../services/games-data.service";
-import {GameInterfaceModel} from "../../../../../services/interface/game-interface.model";
+import {GamesDataService} from "../../../../../../services/games-data.service";
+import {GameInterfaceModel} from "../../../../../../services/interface/game-interface.model";
 import {Subscription} from "rxjs";
 
 @Component({
