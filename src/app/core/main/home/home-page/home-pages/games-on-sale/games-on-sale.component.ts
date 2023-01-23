@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {GamesDataService} from "../../../../../../services/games-data.service";
-import {GameInterfaceModel} from "../../../../../../services/interface/game-interface.model";
+import {GameModel} from "../../../../../../services/interface/game.model";
 import {Subscription} from "rxjs";
 
 @Component({
@@ -9,8 +9,8 @@ import {Subscription} from "rxjs";
   styleUrls: ['./games-on-sale.component.scss']
 })
 export class GamesOnSaleComponent implements OnInit, OnDestroy {
-  public carouselRandomGames: GameInterfaceModel[] = [];
-  public landScapeRandomGames: GameInterfaceModel[] = [];
+  public carouselRandomGames: GameModel[] = [];
+  public landScapeRandomGames: GameModel[] = [];
   private subscription!: Subscription;
   public loadingCarouselGames: boolean = false;
   public loadingLandscapeGames: boolean = false;

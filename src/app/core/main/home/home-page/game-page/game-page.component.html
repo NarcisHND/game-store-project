@@ -1,1 +1,43 @@
-<p>game-page works!</p>
+<section class="game_page_section">
+  <div class="container" *ngIf="!loading">
+    <h1 class="game_title">
+      {{gameData.name | titlecase}}
+    </h1>
+    <p class="game_type">
+      {{gameData.type | titlecase}}
+    </p>
+
+    <div class="row">
+      <div class="col">
+        <video autoplay muted loop width="800rem">
+          <source
+            src="https://www.shutterstock.com/shutterstock/videos/1092822561/preview/stock-footage-soldier-model-selection-screen-in-the-warfare-simulator-video-game-selecting-the-soldiers-in-the.webm">
+        </video>
+
+        <p class="game_description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non justo id libero laoreet mollis sed eu
+          diam. Vivamus quis arcu sollicitudin, auctor mi ac, rutrum metus. Suspendisse vel nunc tincidunt, luctus justo
+          id, blandit lacus. Etiam non quam a lectus accumsan tincidunt. Sed imperdiet quam id ullamcorper congue.
+          Aenean dignissim, nibh et vehicula dignissim, ante risus imperdiet arcu, nec eleifend lorem eros in diam.
+          Proin et dui non odio interdum aliquet.
+        </p>
+
+        <div class="row type_game_container">
+          <div class="col">
+            <div class="title_container">
+              <p class="title">Genres</p>
+              <p class="item">{{gameData.type | titlecase}}</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="title_container">
+              <p class="title">Features</p>
+              <p class="item">Cloud Saves, Single Player</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+</section>

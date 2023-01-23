@@ -1,4 +1,5 @@
-export class GameInterfaceModel {
+export class GameModel {
+  public id: number
   public name: string;
   public type: string;
   public image: string;
@@ -7,7 +8,8 @@ export class GameInterfaceModel {
   public amount: number;
   public description?: string;
 
-  constructor(name: string, type: string, image: string, price: number, platform: string, amount: number, description?: string) {
+  constructor(id: number, name: string, type: string, image: string, price: number, platform: string, amount: number, description?: string) {
+    this.id = id;
     this.name = name;
     this.type = type;
     this.image = image;

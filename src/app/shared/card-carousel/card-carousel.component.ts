@@ -1,5 +1,7 @@
 import {Component, Input} from '@angular/core';
-import {GameInterfaceModel} from "../../services/interface/game-interface.model";
+import {GameModel} from "../../services/interface/game.model";
+import {GamesDataService} from "../../services/games-data.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-card-carousel',
@@ -8,7 +10,14 @@ import {GameInterfaceModel} from "../../services/interface/game-interface.model"
 })
 export class CardCarouselComponent {
   @Input() sectionTitle: string = 'Section Title';
-  @Input() cardData!: GameInterfaceModel[];
+  @Input() cardData!: GameModel[];
   @Input() loadingCarouselGames: boolean = true;
+
+  constructor(private gamesService: GamesDataService, private router: Router, private route: ActivatedRoute) {
+  }
+
+  selectGame(game: GameModel) {
+    this.router.navigate(['game', game.id], {relativeTo: this.route})
+  }
 
 }

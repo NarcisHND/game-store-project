@@ -1,0 +1,57 @@
+.game_page_section {
+  margin-top: 4rem;
+
+  .game_title {
+    color: $light-color-2;
+    font-size: $font-size-0;
+  }
+
+  .game_type {
+    color: $light-color-4;
+    font-size: $font-size-3;
+  }
+
+  video {
+    border-radius: 8px;
+  }
+
+  .game_description {
+    margin-top: 1rem;
+    line-height: 2.5rem;
+    color: $light-color-2;
+    font-size: $font-size-3;
+  }
+
+  .type_game_container {
+    margin-top: 3rem;
+
+    .col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+
+      .title_container {
+        border-left: 2px solid $light-color-4;
+        padding-left: 1rem;
+
+        .title {
+          margin-bottom: 0.5rem;
+          color: $light-color-4;
+          font-size: $font-size-4;
+        }
+
+        .item {
+          color: $light-color-2;
+          font-size: $font-size-4;
+          margin: 0;
+        }
+      }
+    }
+
+
+  }
+
+
+}

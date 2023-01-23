@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {GameInterfaceModel} from "../../services/interface/game-interface.model";
+import {GameModel} from "../../services/interface/game.model";
+import {GamesDataService} from "../../services/games-data.service";
 
 @Component({
   selector: 'app-card-details',
@@ -7,6 +8,10 @@ import {GameInterfaceModel} from "../../services/interface/game-interface.model"
   styleUrls: ['./card-details.component.scss']
 })
 export class CardDetailsComponent {
-  @Input() cardData!: GameInterfaceModel[];
+  @Input() cardData!: GameModel[];
   @Input() loadingLandscapeGames: boolean = false;
+
+  constructor() {
+  }
+
 }

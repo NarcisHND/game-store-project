@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {GamesDataService} from "../../../../../../services/games-data.service";
-import {FreeGameInterfaceModel} from "../../../../../../services/interface/free-game-interface.model";
+import {FreeGameModel} from "../../../../../../services/interface/free-game.model";
 import {Subscription} from "rxjs";
 
 @Component({
@@ -9,7 +9,7 @@ import {Subscription} from "rxjs";
   styleUrls: ['./free-games.component.scss']
 })
 export class FreeGamesComponent implements OnInit, OnDestroy {
-  public freeRandomGames!: FreeGameInterfaceModel[];
+  public freeRandomGames!: FreeGameModel[];
   private subscription!: Subscription;
   public loading: boolean = false;
 

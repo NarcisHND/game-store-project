@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {GamesDataService} from "../../../../../../services/games-data.service";
-import {GameInterfaceModel} from "../../../../../../services/interface/game-interface.model";
-import {FreeGameInterfaceModel} from "../../../../../../services/interface/free-game-interface.model";
+import {GameModel} from "../../../../../../services/interface/game.model";
+import {FreeGameModel} from "../../../../../../services/interface/free-game.model";
 import {Subscription} from "rxjs";
 
 @Component({
@@ -10,9 +10,9 @@ import {Subscription} from "rxjs";
   styleUrls: ['./top-games.component.scss']
 })
 export class TopGamesComponent implements OnInit, OnDestroy {
-  public topSellers!: GameInterfaceModel[];
-  public mostPlayed!: GameInterfaceModel[];
-  public topUpcoming!: FreeGameInterfaceModel[];
+  public topSellers!: GameModel[];
+  public mostPlayed!: GameModel[];
+  public topUpcoming!: FreeGameModel[];
   private subscription!: Subscription;
   public firstLoading: boolean = false;
   public secondLoading: boolean = false;

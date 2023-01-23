@@ -6,10 +6,12 @@ import {GamePageComponent} from "./home-page/game-page/game-page.component";
 
 
 const routes: Routes = [
-  {path: '', component: HomePageComponent, children: [
+  {
+    path: '', component: HomePageComponent, children: [
       {path: '', component: HomePagesComponent},
-      {path: 'game', component: GamePageComponent},
-    ]}
+      {path: 'game/:id', component: GamePageComponent},
+    ]
+  }
 ];
 
 @NgModule({
