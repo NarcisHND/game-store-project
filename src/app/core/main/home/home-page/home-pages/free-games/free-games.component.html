@@ -12,6 +12,7 @@
     <div class="free_games_grid_section">
       <div class="free_games_card_col" *ngFor="let game of freeRandomGames">
         <app-game-card
+          (click)="selectGame(game)"
           [freeGames]="game"
           [cardType]="'freeGames'"
           [cardStyle]="{width: '250px', height: '420px'}"

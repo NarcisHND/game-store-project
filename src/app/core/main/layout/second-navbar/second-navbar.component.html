@@ -21,13 +21,14 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">Discover</a>
+            <a class="nav-link" routerLink="/home" routerLinkActive="active"
+               [routerLinkActiveOptions]="{exact: true}">Discover</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Browse</a>
+            <a class="nav-link" routerLink="/browse" routerLinkActive="active">Browse</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled">News</a>
+            <a class="nav-link" routerLink="/news" routerLinkActive="active">News</a>
           </li>
         </ul>
       </div>

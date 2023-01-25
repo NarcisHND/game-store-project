@@ -94,7 +94,7 @@
           <div class="edition_card">
             <div class="header_container">
               <div class="image_container">
-                <img class="card_image"
+                <img alt="img" class="card_image"
                      src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80">
               </div>
               <div class="description_container">
@@ -115,7 +115,7 @@
           <div class="edition_card">
             <div class="header_container">
               <div class="image_container">
-                <img class="card_image"
+                <img alt="img" class="card_image"
                      src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80">
               </div>
               <div class="description_container">
@@ -204,9 +204,11 @@
         </div>
       </div>
       <div class="col-4 buying_game">
-        <h2 class="game_price">RON {{gameData.price}}</h2>
+        <h2
+          class="game_price">{{gameData.price === 'free' || gameData.price === 'coming soon' ? '' : 'RON ' + gameData.price}}</h2>
         <div class="btns_container">
-          <button class="btn btn-success">Buy Now</button>
+          <button class="btn btn-success"
+                  [disabled]="gameData.price === 'coming soon'">{{gameData.price !== 'free' ? 'Buy Now' : 'Get Free'}}</button>
           <button class="btn btn-outline-light">Add to cart</button>
           <button class="btn btn-outline-light">Add to wishlist</button>
         </div>

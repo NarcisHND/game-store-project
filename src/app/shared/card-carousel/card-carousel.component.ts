@@ -17,6 +17,8 @@ export class CardCarouselComponent {
   }
 
   selectGame(game: GameModel): void {
-    this.router.navigate(['game', game.id], {relativeTo: this.route})
+    this.router.navigate(['game', game.id, 'gamesData'], {
+      relativeTo: this.route,
+    })
   }
 }

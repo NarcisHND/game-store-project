@@ -3,6 +3,7 @@ import {GamesDataService} from "../../../../../../services/games-data.service";
 import {GameModel} from "../../../../../../services/interface/game.model";
 import {FreeGameModel} from "../../../../../../services/interface/free-game.model";
 import {Subscription} from "rxjs";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-top-games',
@@ -17,7 +18,7 @@ export class TopGamesComponent implements OnInit, OnDestroy {
   public firstLoading: boolean = false;
   public secondLoading: boolean = false;
 
-  constructor(private gameDataService: GamesDataService) {
+  constructor(private gameDataService: GamesDataService, private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -44,8 +45,20 @@ export class TopGamesComponent implements OnInit, OnDestroy {
         this.secondLoading = false;
       },
       error: (err) => {
-        console.log(err);
+        console.error(err);
       }
+    })
+  }
+
+  selectGameByGamesData(game: GameModel) {
+    this.router.navigate(['game', game.id, 'gamesData'], {
+      relativeTo: this.route,
+    })
+  }
+
+  selectGameByFreeGamesData(game: FreeGameModel) {
+    this.router.navigate(['game', game.id, 'freeGamesData'], {
+      relativeTo: this.route,
     })
   }
 

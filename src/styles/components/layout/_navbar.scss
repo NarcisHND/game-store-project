@@ -36,6 +36,10 @@
         border-bottom: 4px solid $light-color-3;
       }
 
+      & > .nav-link.active {
+        border-bottom: 4px solid $light-color-3;
+      }
+
       .nav-link {
         display: flex;
         align-items: center;

@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {GamesDataService} from "../../../../../../services/games-data.service";
 import {FreeGameModel} from "../../../../../../services/interface/free-game.model";
 import {Subscription} from "rxjs";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-free-games',
@@ -13,7 +14,7 @@ export class FreeGamesComponent implements OnInit, OnDestroy {
   private subscription!: Subscription;
   public loading: boolean = false;
 
-  constructor(private gamesDataService: GamesDataService) {
+  constructor(private gamesDataService: GamesDataService, private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -28,9 +29,15 @@ export class FreeGamesComponent implements OnInit, OnDestroy {
         this.loading = false;
       },
       error: (err) => {
-        console.log(err);
+        console.error(err);
         this.loading = false;
       }
+    })
+  }
+
+  selectGame(game: FreeGameModel) {
+    this.router.navigate(['game', game.id, 'freeGamesData'], {
+      relativeTo: this.route,
     })
   }
 
