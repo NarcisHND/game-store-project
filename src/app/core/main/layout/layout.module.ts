@@ -5,6 +5,7 @@ import {NavbarComponent} from "./navbar/navbar.component";
 import {MatIconModule} from "@angular/material/icon";
 import {SecondNavbarComponent} from "./second-navbar/second-navbar.component";
 import {ServicesModule} from "../../../services/services.module";
+import {RouterLink, RouterLinkActive} from "@angular/router";
 
 
 @NgModule({
@@ -21,7 +22,9 @@ import {ServicesModule} from "../../../services/services.module";
   imports: [
     CommonModule,
     MatIconModule,
-    ServicesModule
+    ServicesModule,
+    RouterLink,
+    RouterLinkActive
   ]
 })
 export class LayoutModule {

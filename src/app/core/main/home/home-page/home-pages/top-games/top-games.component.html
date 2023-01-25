@@ -7,7 +7,8 @@
       </div>
       <div class="game_card_container" *ngFor="let game of topSellers">
 
-        <div class="game_card" appHoverGameCard *ngIf="!firstLoading && !secondLoading">
+        <div class="game_card" (click)="selectGameByGamesData(game)" appHoverGameCard
+             *ngIf="!firstLoading && !secondLoading">
           <div class="game_image_container">
             <div class="add_icon_container">
               <mat-icon class="add_icon">add</mat-icon>
@@ -35,7 +36,8 @@
       </div>
       <div class="game_card_container" *ngFor="let game of mostPlayed">
 
-        <div class="game_card" appHoverGameCard *ngIf="!firstLoading && !secondLoading">
+        <div class="game_card" (click)="selectGameByGamesData(game)" appHoverGameCard
+             *ngIf="!firstLoading && !secondLoading">
           <div class="game_image_container">
             <div class="add_icon_container">
               <mat-icon class="add_icon">add</mat-icon>
@@ -55,6 +57,7 @@
         </div>
       </div>
     </div>
+
     <div class="col-4">
       <div class="title_container">
         <h2 class="title">Top Upcoming Wishlisted</h2>
@@ -62,7 +65,8 @@
       </div>
       <div class="game_card_container" *ngFor="let game of topUpcoming">
 
-        <div class="game_card" appHoverGameCard *ngIf="!firstLoading && !secondLoading">
+        <div class="game_card" (click)="selectGameByFreeGamesData(game)" appHoverGameCard
+             *ngIf="!firstLoading && !secondLoading">
           <div class="game_image_container">
             <div class="add_icon_container">
               <mat-icon class="add_icon">add</mat-icon>

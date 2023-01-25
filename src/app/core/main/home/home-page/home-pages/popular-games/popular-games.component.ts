@@ -28,7 +28,7 @@ export class PopularGamesComponent implements OnInit, OnDestroy {
         this.loading = false;
       },
       error: (err) => {
-        console.log(err);
+        console.error(err);
         this.loading = false;
       }
     });

@@ -31,7 +31,7 @@ export class GamesOnSaleComponent implements OnInit, OnDestroy {
         this.loadingCarouselGames = false;
       },
       error: (err) => {
-        console.log(err);
+        console.error(err);
       }
     });
 
@@ -41,7 +41,7 @@ export class GamesOnSaleComponent implements OnInit, OnDestroy {
         this.loadingLandscapeGames = false;
       },
       error: (err) => {
-        console.log(err);
+        console.error(err);
       }
     })
   }

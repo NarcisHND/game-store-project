@@ -36,6 +36,11 @@
           }
         }
 
+        & .nav-link.active {
+          color: #7BC74D !important;
+        }
+
+
         .search_box {
           display: flex;
           height: 4rem;

@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 card_container_col" *ngFor="let game of cardData">
       <app-game-card [landScapeGames]="game" [cardType]="'landScapeGames'"
-                     [placeholderCard]="loadingLandscapeGames"></app-game-card>
+                     [placeholderCard]="loadingLandscapeGames"
+                     (click)="selectGame(game)"></app-game-card>
     </div>
   </div>
 </div>
