@@ -16,9 +16,6 @@ export class GamePageComponent implements OnInit {
   }
 
   ngOnInit() {
-    // window.scroll(0, 0);
-    const nav = this.el.nativeElement.parentElement.parentElement.querySelector('.navbar');
-    // nav.scrollIntoView();
     window.scrollTo(0, 0)
     this.loadData();
   }
