@@ -16,8 +16,7 @@ export class CardCarouselComponent {
   constructor(private gamesService: GamesDataService, private router: Router, private route: ActivatedRoute) {
   }
 
-  selectGame(game: GameModel) {
+  selectGame(game: GameModel): void {
     this.router.navigate(['game', game.id], {relativeTo: this.route})
   }
-
 }

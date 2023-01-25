@@ -20,7 +20,7 @@ export class FreeGamesComponent implements OnInit, OnDestroy {
     this.loadData();
   }
 
-  loadData() {
+  loadData(): void {
     this.loading = true;
     this.subscription = this.gamesDataService.getFreeGames().subscribe({
       next: (res) => {

@@ -20,7 +20,7 @@ export class PopularGamesComponent implements OnInit, OnDestroy {
     this.loadData();
   }
 
-  loadData() {
+  loadData(): void {
     this.loading = true;
     this.subscription = this.gamesDataService.getGames().subscribe({
       next: (res) => {

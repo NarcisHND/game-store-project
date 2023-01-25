@@ -24,7 +24,7 @@ export class TopGamesComponent implements OnInit, OnDestroy {
     this.loadData();
   }
 
-  loadData() {
+  loadData(): void {
     this.firstLoading = true;
     this.secondLoading = true;
     this.subscription = this.gameDataService.getGames().subscribe({

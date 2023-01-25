@@ -1,6 +1,5 @@
 import {Component, Input} from '@angular/core';
 import {GameModel} from "../../services/interface/game.model";
-import {GamesDataService} from "../../services/games-data.service";
 
 @Component({
   selector: 'app-card-details',
@@ -13,5 +12,4 @@ export class CardDetailsComponent {
 
   constructor() {
   }
-
 }

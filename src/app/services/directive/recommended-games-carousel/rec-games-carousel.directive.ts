@@ -20,7 +20,7 @@ export class RecGamesCarouselDirective implements AfterViewInit {
     this.htmlElGameCards = this.elRef.nativeElement.parentElement.querySelectorAll('.rec_games_card_container');
     this.renderer.addClass(this.htmlElGameCards[0], 'active_card');
 
-    this.carouselFunction = () => {
+    this.carouselFunction = (): void => {
       let activeIndex: number = 0;
       this.htmlElCarousel.forEach((el: any, index: number) => {
         if (el.id === 'stopCarousel') {
@@ -46,7 +46,7 @@ export class RecGamesCarouselDirective implements AfterViewInit {
   }
 
   @HostListener('click')
-  nextFunc() {
+  nextFunc(): void {
     this.stopCarousel();
     let gameCard: HTMLObjectElement;
     this.htmlElGameCards.forEach((el: any) => {
@@ -70,11 +70,11 @@ export class RecGamesCarouselDirective implements AfterViewInit {
     this.startCarousel();
   }
 
-  stopCarousel() {
+  stopCarousel(): void {
     clearInterval(this.createCarouselInterval);
   }
 
-  startCarousel() {
+  startCarousel(): void {
     this.createCarouselInterval = setInterval(this.carouselFunction, 3000);
   }
 }

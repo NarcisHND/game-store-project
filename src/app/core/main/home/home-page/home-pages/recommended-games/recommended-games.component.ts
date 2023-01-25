@@ -14,18 +14,18 @@ import {Subscription} from "rxjs";
 })
 export class RecommendedGamesComponent implements OnInit, OnDestroy {
   public gamesData!: RecommendedGameModel[];
-  public loading = false;
+  public loading: boolean = false;
   private subscription!: Subscription;
 
 
   constructor(private gamesDataService: GamesDataService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.loadData();
   }
 
-  loadData() {
+  loadData(): void {
     this.loading = true;
     this.subscription = this.gamesDataService.getRecommendedGames().subscribe({
       next: (res) => {

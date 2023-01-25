@@ -22,7 +22,7 @@ export class GamesOnSaleComponent implements OnInit, OnDestroy {
     this.loadData();
   }
 
-  loadData() {
+  loadData(): void {
     this.loadingCarouselGames = true;
     this.loadingLandscapeGames = true;
     this.subscription = this.gamesDataService.getGames().subscribe({

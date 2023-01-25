@@ -314,7 +314,7 @@ export class GamesDataService {
     return this.http.get<FreeGameModel[]>(environment.fireBaseUrl + 'freeGamesData.json');
   }
 
-  selectAllRandomGames(numberGames: number, gamesData: GameModel[]) {
+  selectAllRandomGames(numberGames: number, gamesData: GameModel[]): GameModel[] {
     let gameData: GameModel[] = gamesData;
     let randomNumber!: number;
     let uniqueSet: GameModel[] = [];
@@ -324,7 +324,7 @@ export class GamesDataService {
     return this.randomFunction(numberGames, randomNumber, gameData, games, sortSet, uniqueSet);
   }
 
-  selectFreeRandomGames(numberGames: number, gamesData: FreeGameModel[]) {
+  selectFreeRandomGames(numberGames: number, gamesData: FreeGameModel[]): FreeGameModel[] {
     let gameData: FreeGameModel[] = gamesData;
     let randomNumber!: number;
     let uniqueSet: FreeGameModel[] = [];
@@ -334,7 +334,7 @@ export class GamesDataService {
     return this.randomFunction(numberGames, randomNumber, gameData, games, sortSet, uniqueSet);
   }
 
-  randomFunction(numberGames: number, randomNumber: number, gameData: any, games: any, sortSet: any, uniqueSet: any) {
+  randomFunction(numberGames: number, randomNumber: number, gameData: FreeGameModel[] | GameModel[], games: unknown[], sortSet: any, uniqueSet: any) {
     do {
       randomNumber = Math.floor(Math.random() * gameData.length);
       if (gameData) {
