@@ -14,6 +14,7 @@ import { PopularGamesComponent } from './home-page/home-pages/popular-games/popu
 import { LayoutModule } from "../layout/layout.module";
 import { HomePagesComponent } from './home-page/home-pages/home-pages.component';
 import { GamePageComponent } from './home-page/game-page/game-page.component';
+import { PlaceholderGamePageComponent } from './home-page/game-page/placeholder-game-page/placeholder-game-page.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { GamePageComponent } from './home-page/game-page/game-page.component';
     PopularGamesComponent,
     HomePagesComponent,
     GamePageComponent,
+    PlaceholderGamePageComponent,
   ],
   imports: [
     CommonModule,
