@@ -1,1 +1,238 @@
-<p>game-page works!</p>
+<section class="game_page_section">
+  <div class="container" *ngIf="!loading">
+    <h1 class="game_title">
+      {{gameData.name | titlecase}}
+    </h1>
+    <p class="game_type">
+      {{gameData.type | titlecase}}
+    </p>
+
+    <div class="row">
+      <div class="col-8 game_preview">
+        <video autoplay muted loop width="800rem">
+          <source *ngIf="gameData.type === 'shooters'"
+                  src="https://www.shutterstock.com/shutterstock/videos/1092822561/preview/stock-footage-soldier-model-selection-screen-in-the-warfare-simulator-video-game-selecting-the-soldiers-in-the.webm">
+          <source *ngIf="gameData.type === 'action-adventure'"
+                  src="https://www.shutterstock.com/shutterstock/videos/1033295393/preview/stock-footage-space-shooter-d-video-game-imitation-the-spacecraft-in-space-destroys-the-enemy-crew-with-a-laser.webm">
+          <source *ngIf="gameData.type === 'simulation-sport'"
+                  src="https://www.shutterstock.com/shutterstock/videos/1084168750/preview/stock-footage-animated-fake-d-video-game-soccer-gameplay-two-teams-play-in-a-stadium-full-of-spectators-shot.webm">
+          <source *ngIf="gameData.type === 'upcoming'"
+                  src="https://www.shutterstock.com/shutterstock/videos/1059032645/preview/stock-footage-glitch-pixel-video-game-screen-animation-with-pixel-text-level-up-plus-one-vhs-vignetted-capture.webm">
+          <source *ngIf="gameData.type === 'strategy'"
+                  src="https://www.shutterstock.com/shutterstock/videos/1066769368/preview/stock-footage-fake-sci-fi-rpg-video-game-gameplay-battle-on-the-moon-with-spaceships-and-robots-looped-d-vfx.webm">
+        </video>
+
+        <p class="game_description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non justo id libero laoreet mollis sed eu
+          diam. Vivamus quis arcu sollicitudin, auctor mi ac, rutrum metus. Suspendisse vel nunc tincidunt, luctus justo
+          id, blandit lacus. Etiam non quam a lectus accumsan tincidunt. Sed imperdiet quam id ullamcorper congue.
+          Aenean dignissim, nibh et vehicula dignissim, ante risus imperdiet arcu, nec eleifend lorem eros in diam.
+          Proin et dui non odio interdum aliquet.
+        </p>
+
+        <div class="row type_game_container">
+          <div class="col">
+            <div class="title_container">
+              <p class="title">Genres</p>
+              <p class="item">{{gameData.type | titlecase}}</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="title_container">
+              <p class="title">Features</p>
+              <p class="item">Cloud Saves, Single Player</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="description_game_container">
+          <h2 class="description_game_title">Description Game</h2>
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="false" aria-controls="collapseOne">
+                  Show More
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                   data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p> Curabitur et nunc in tellus laoreet dictum. Ut ultricies semper leo, in consectetur turpis
+                    efficitur
+                    at. Morbi facilisis urna ut mauris rutrum, eget lacinia ipsum elementum. Nunc luctus, orci vitae
+                    lobortis commodo, lectus erat convallis est, nec volutpat eros mi in lorem. Aliquam ac sem justo.
+                    Aenean tempus fringilla erat, mattis convallis diam vestibulum fringilla. Donec eget molestie magna,
+                    vitae malesuada nisl. Suspendisse lorem nibh, tincidunt at nunc quis, molestie scelerisque metus.
+                    Duis
+                    vel maximus tellus. Suspendisse mattis pharetra convallis. Nulla elementum ullamcorper felis, sit
+                    amet
+                    tristique ex pulvinar sed. Sed dignissim, felis a suscipit pharetra, ligula tortor fringilla velit,
+                    in
+                    finibus nunc velit in felis. Ut sit amet tellus non nunc aliquet gravida. Curabitur turpis diam,
+                    porta
+                    vel odio pellentesque, auctor lobortis erat.</p>
+                  <p> Aenean non nunc vel ligula rutrum sagittis. Proin eu lacus at ante dapibus posuere ut nec elit.
+                    Etiam
+                    auctor lacinia felis eget pretium. Ut tempor quis augue nec posuere. Morbi ac dignissim elit, ac
+                    laoreet odio. Phasellus in consequat eros. Vivamus odio ligula, lobortis vitae lacinia laoreet,
+                    dictum
+                    non felis. Quisque sed justo dictum, tempus tellus at, luctus est. Duis aliquet, libero vel porta
+                    sagittis, purus justo hendrerit ipsum, sit amet vulputate libero diam sed mi. Proin lacinia lectus
+                    quis libero pharetra volutpat. Proin id pulvinar augue. Praesent sit amet tortor dapibus, facilisis
+                    libero et, euismod justo. Praesent et felis non tortor tincidunt consectetur eget ac leo. Donec
+                    dignissim vitae tortor eu faucibus.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="edition_cards_container">
+          <h2 class="edition_cards_title">Editions</h2>
+          <div class="edition_card">
+            <div class="header_container">
+              <div class="image_container">
+                <img class="card_image"
+                     src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80">
+              </div>
+              <div class="description_container">
+                <h2 class="title">Deluxe Edition</h2>
+                <p class="description">Ut mattis ex turpis, id sodales dui accumsan sit amet. Fusce accumsan fermentum
+                  magna quis fringilla. Aliquam sed convallis est, eu porttitor enim. Etiam mattis non nisl vitae
+                  lobortis. Vivamus facilisis iaculis ante, ac molestie lorem rhoncus vel. Integer sodales enim vel
+                  luctus luctus. Donec sit amet nisl ut diam tincidunt sodales sit amet in ante. Integer lobortis risus
+                  et eros egestas, id varius nulla rhoncus. Sed tempus eget lacus ut vulputate. </p>
+              </div>
+            </div>
+            <div class="body_container">
+              <h2 class="price">RON 392</h2>
+              <button class="btn btn-outline-light">Add to cart</button>
+              <button class="btn btn-outline-light">Add to wishlist</button>
+            </div>
+          </div>
+          <div class="edition_card">
+            <div class="header_container">
+              <div class="image_container">
+                <img class="card_image"
+                     src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80">
+              </div>
+              <div class="description_container">
+                <h2 class="title">Demo Edition</h2>
+                <p class="description"> Donec et urna imperdiet sapien dapibus ullamcorper. Proin laoreet porttitor
+                  neque a consequat. Praesent viverra tempor arcu, sed dignissim libero aliquam vitae. Sed sollicitudin
+                  hendrerit ipsum, a egestas justo. Donec vel nulla ultricies, varius enim ac, placerat diam. </p>
+              </div>
+            </div>
+            <div class="body_container">
+              <h2 class="price"></h2>
+              <button class="btn btn-outline-light">Add to cart</button>
+              <button class="btn btn-outline-light">Add to wishlist</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="follow_us_container">
+          <h2 class="follow_title">Follows Us</h2>
+          <div class="icons_container">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-solid fa-earth-americas"></i>
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+        </div>
+
+        <div class="specifications_container">
+          <h2 class="specifications_title">Specifications</h2>
+
+          <div class="platform_container">
+            <div class="game_platform_container">
+              <h2 class="game_platform_title">{{gameData.platform}}</h2>
+            </div>
+            <div class="row">
+              <div class="col">
+                <h3 class="title">Minimum</h3>
+                <h3 class="title">OS</h3>
+                <p class="desc">Windows® 10 64-bit (After November 2019 Update) or Windows® 11 64-bit</p>
+                <h3 class="title">Processor</h3>
+                <p class="desc">AMD Ryzen™ 5 1600 (3.7GHz or better) / Intel® Core™ i7-3770 (3.7GHz or better)</p>
+                <h3 class="title">Memory</h3>
+                <p class="desc">16GB</p>
+                <h3 class="title">Storage</h3>
+                <p class="desc">HDD 150GB</p>
+                <h3 class="title">Direct X</h3>
+                <p class="desc">12</p>
+                <h3 class="title">Graphics</h3>
+                <p class="desc">AMD Radeon™ RX 5500 XT 8GB / NVIDIA® GeForce® GTX 1060 6 GB VRAM</p>
+                <h3 class="title">Additional Notes</h3>
+                <p class="desc">720p 30fps</p>
+                <h3 class="title">Logins</h3>
+                <p class="desc">Requires Epic Games account</p>
+
+              </div>
+              <div class="col">
+                <h3 class="title">Recommended</h3>
+                <h3 class="title">OS</h3>
+                <p class="desc">Windows® 10 64-bit (After November 2019 Update) or Windows® 11 64-bit (ULTRA : Windows®
+                  10 64-bit
+                  (After November 2019 Update) or Windows® 11 64-bit)</p>
+                <h3 class="title">Processor</h3>
+                <p class="desc">AMD Ryzen™5 3600 (3.7 GHz or better) / Intel® Core™ i7-8700K (3.7GHz or better) (ULTRA :
+                  AMD Ryzen™5
+                  5800X (3.8 GHz or better) / Intel® Core™ i7-12700)</p>
+                <h3 class="title">Memory</h3>
+                <p class="desc">24GB (ULTRA : 32GB)</p>
+                <h3 class="title">Storage</h3>
+                <p class="desc">SSD 150GB (ULTRA : NVMe SSD 150GB or more)</p>
+                <h3 class="title">Direct X</h3>
+                <p class="desc">12 (ULTRA : 12)</p>
+                <h3 class="title">Graphics</h3>
+                <p class="desc">AMD Radeon™ RX 6700 XT 12GB / NVIDIA® GeForce® RTX 3070 8 GB VRAM (ULTRA : AMD Radeon™
+                  RX 6800 XT
+                  16GB / NVIDIA® GeForce® RTX 4080 16 GB VRAM)</p>
+                <h3 class="title">Additional Notes</h3>
+                <p class="desc">1440p 30fps (ULTRA : 2160p 60fps)</p>
+              </div>
+              <h3 class="title">Languages Supported</h3>
+              <p class="desc">AUDIO: English, French, German, Japanese
+                TEXT: English, French, German, Italian, Spanish - Spain, Spanish - Latin America, Russian, Portuguese -
+                Brazil, Arabic, Japanese, Korean, Chinese - Simplified, Chinese - Traditional, Thai</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 buying_game">
+        <h2 class="game_price">RON {{gameData.price}}</h2>
+        <div class="btns_container">
+          <button class="btn btn-success">Buy Now</button>
+          <button class="btn btn-outline-light">Add to cart</button>
+          <button class="btn btn-outline-light">Add to wishlist</button>
+        </div>
+        <div class="game_info">
+          <div class="info">
+            <h2 class="info_title">Developer</h2>
+            <h2 class="info_desc">Luminous Productions</h2>
+          </div>
+          <div class="info">
+            <h2 class="info_title">Publisher</h2>
+            <h2 class="info_desc">Square Enix</h2>
+          </div>
+          <div class="info">
+            <h2 class="info_title">Release Date</h2>
+            <h2 class="info_desc">01/24/23</h2>
+          </div>
+          <div class="info">
+            <h2 class="info_title">Platform</h2>
+            <h2 class="info_desc">{{gameData.platform | uppercase}}</h2>
+          </div>
+        </div>
+        <div class="info_btns">
+          <button class="btn btn-outline-light"><i class="fa-solid fa-share-nodes"></i>Share</button>
+          <button class="btn btn-outline-light"><i class="fa-regular fa-flag"></i>Report</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

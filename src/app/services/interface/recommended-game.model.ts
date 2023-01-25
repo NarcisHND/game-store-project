@@ -1,4 +1,4 @@
-export class RecommendedGameInterfaceModel {
+export class RecommendedGameModel {
   public name: string;
   public image: string;
   public price: string | number;

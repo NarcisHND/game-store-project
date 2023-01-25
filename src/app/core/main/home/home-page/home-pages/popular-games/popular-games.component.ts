@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {GameInterfaceModel} from "../../../../../../services/interface/game-interface.model";
+import {GameModel} from "../../../../../../services/interface/game.model";
 import {GamesDataService} from "../../../../../../services/games-data.service";
 import {Subscription} from "rxjs";
 
@@ -9,7 +9,7 @@ import {Subscription} from "rxjs";
   styleUrls: ['./popular-games.component.scss']
 })
 export class PopularGamesComponent implements OnInit, OnDestroy {
-  public carouselRandomGames: GameInterfaceModel[] = [];
+  public carouselRandomGames: GameModel[] = [];
   private subscription!: Subscription;
   public loading: boolean = false;
 
@@ -20,7 +20,7 @@ export class PopularGamesComponent implements OnInit, OnDestroy {
     this.loadData();
   }
 
-  loadData() {
+  loadData(): void {
     this.loading = true;
     this.subscription = this.gamesDataService.getGames().subscribe({
       next: (res) => {

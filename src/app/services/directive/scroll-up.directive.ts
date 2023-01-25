@@ -9,7 +9,7 @@ export class ScrollUpDirective {
   }
 
   @HostListener('click')
-  scrollUp() {
+  scrollUp(): void {
     const selectNavbarElRef = this.elRef.nativeElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector('.navbar');
     selectNavbarElRef.scrollIntoView();
   }

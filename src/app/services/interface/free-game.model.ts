@@ -1,4 +1,4 @@
-export class FreeGameInterfaceModel {
+export class FreeGameModel {
   public name: string;
   public image: string;
   public validity: string;

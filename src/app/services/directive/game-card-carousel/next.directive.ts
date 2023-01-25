@@ -9,7 +9,7 @@ export class NextDirective {
   }
 
   @HostListener('click')
-  nextFunc() {
+  nextFunc(): void {
     let elm = this.el.nativeElement.parentElement.parentElement.parentElement.children[1];
     let itemContainer = elm.getElementsByClassName('slider-main');
     let item = elm.getElementsByClassName('item');

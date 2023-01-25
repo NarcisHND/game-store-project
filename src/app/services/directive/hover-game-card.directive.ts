@@ -10,13 +10,13 @@ export class HoverGameCardDirective {
   }
 
   @HostListener('mouseover')
-  makeVisibleWishButton() {
+  makeVisibleWishButton(): void {
     this.buttonWishEl = this.elRef.nativeElement.firstChild.firstChild;
     this.renderer.setStyle(this.buttonWishEl, 'display', 'flex');
   }
 
   @HostListener('mouseleave')
-  disableWishButton() {
+  disableWishButton(): void {
     this.renderer.setStyle(this.buttonWishEl, 'display', 'none');
   }
 }

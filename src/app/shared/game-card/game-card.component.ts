@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {GameInterfaceModel} from "../../services/interface/game-interface.model";
-import {FreeGameInterfaceModel} from "../../services/interface/free-game-interface.model";
+import {GameModel} from "../../services/interface/game.model";
+import {FreeGameModel} from "../../services/interface/free-game.model";
 
 @Component({
   selector: 'app-game-card',
@@ -8,9 +8,9 @@ import {FreeGameInterfaceModel} from "../../services/interface/free-game-interfa
   styleUrls: ['./game-card.component.scss']
 })
 export class GameCardComponent implements OnInit {
-  @Input() public allGames!: GameInterfaceModel;
-  @Input() public freeGames!: FreeGameInterfaceModel;
-  @Input() public landScapeGames!: GameInterfaceModel;
+  @Input() public allGames!: GameModel;
+  @Input() public freeGames!: FreeGameModel;
+  @Input() public landScapeGames!: GameModel;
   @Input() public cardStyle!: {};
   @Input() public cardType!: string;
   @Input() public placeholderCard: boolean = false;

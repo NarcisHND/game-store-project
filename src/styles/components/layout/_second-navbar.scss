@@ -4,9 +4,17 @@
   z-index: 1000;
   background-color: $dark-color;
   font-family: 'Roboto Flex', sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
   .nav_bar {
-    padding: 0;
+    //height: 10rem;
+    padding: 1.8rem;
+    //display: flex;
+    //flex-direction: row;
+    //justify-content: center;
+    //align-items: center;
 
     .container_list {
       margin-top: 1rem;

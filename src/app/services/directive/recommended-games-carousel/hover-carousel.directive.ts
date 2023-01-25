@@ -14,14 +14,14 @@ export class HoverCarouselDirective implements AfterViewInit {
   }
 
   @HostListener('mouseover')
-  setId() {
+  setId(): void {
     this.carouselItems.forEach((item: Node) => {
       this.renderer.setAttribute(item, 'id', 'stopCarousel');
     });
   }
 
   @HostListener('mouseleave')
-  removeId() {
+  removeId(): void {
     this.carouselItems.forEach((item: Node) => {
       this.renderer.removeAttribute(item, 'id',);
     });

@@ -4,7 +4,7 @@ import {
   OnInit
 } from '@angular/core';
 import {GamesDataService} from "../../../../../../services/games-data.service";
-import {RecommendedGameInterfaceModel} from "../../../../../../services/interface/recommended-game-interface.model";
+import {RecommendedGameModel} from "../../../../../../services/interface/recommended-game.model";
 import {Subscription} from "rxjs";
 
 @Component({
@@ -13,19 +13,19 @@ import {Subscription} from "rxjs";
   styleUrls: ['./recommended-games.component.scss']
 })
 export class RecommendedGamesComponent implements OnInit, OnDestroy {
-  public gamesData!: RecommendedGameInterfaceModel[];
-  public loading = false;
+  public gamesData!: RecommendedGameModel[];
+  public loading: boolean = false;
   private subscription!: Subscription;
 
 
   constructor(private gamesDataService: GamesDataService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.loadData();
   }
 
-  loadData() {
+  loadData(): void {
     this.loading = true;
     this.subscription = this.gamesDataService.getRecommendedGames().subscribe({
       next: (res) => {
