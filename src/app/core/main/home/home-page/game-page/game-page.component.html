@@ -1,4 +1,4 @@
-<section class="game_page_section">
+<section *ngIf="!loading" class="game_page_section">
   <div class="container" *ngIf="!loading">
     <h1 class="game_title">
       {{gameData.name | titlecase}}
@@ -236,3 +236,8 @@
     </div>
   </div>
 </section>
+<app-placeholder-game-page *ngIf="loading"></app-placeholder-game-page>
+
+
+
+
