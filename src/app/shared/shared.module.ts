@@ -5,18 +5,21 @@ import {MatIconModule} from "@angular/material/icon";
 import {ServicesModule} from "../services/services.module";
 import {CardCarouselComponent} from './card-carousel/card-carousel.component';
 import {CardDetailsComponent} from './card-details/card-details.component';
+import {GamesTypeCarouselComponent} from './games-type-carousel/games-type-carousel.component';
 
 
 @NgModule({
   declarations: [
     GameCardComponent,
     CardCarouselComponent,
-    CardDetailsComponent
+    CardDetailsComponent,
+    GamesTypeCarouselComponent
   ],
   exports: [
     GameCardComponent,
     CardCarouselComponent,
-    CardDetailsComponent
+    CardDetailsComponent,
+    GamesTypeCarouselComponent
   ],
   imports: [
     CommonModule,

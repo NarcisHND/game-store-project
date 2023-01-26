@@ -15,6 +15,7 @@ import { LayoutModule } from "../layout/layout.module";
 import { HomePagesComponent } from './home-page/home-pages/home-pages.component';
 import { GamePageComponent } from './home-page/game-page/game-page.component';
 import { PlaceholderGamePageComponent } from './home-page/game-page/placeholder-game-page/placeholder-game-page.component';
+import { BrowsePageComponent } from './home-page/browse-page/browse-page.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PlaceholderGamePageComponent } from './home-page/game-page/placeholder-
     HomePagesComponent,
     GamePageComponent,
     PlaceholderGamePageComponent,
+    BrowsePageComponent,
   ],
   imports: [
     CommonModule,
