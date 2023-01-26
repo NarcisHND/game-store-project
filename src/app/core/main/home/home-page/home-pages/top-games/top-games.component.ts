@@ -57,6 +57,7 @@ export class TopGamesComponent implements OnInit, OnDestroy {
   }
 
   selectGameByFreeGamesData(game: FreeGameModel) {
+    this.gameDataService.fetchData().subscribe((res) => console.log(res))
     this.router.navigate(['game', game.id, 'freeGamesData'], {
       relativeTo: this.route,
     })

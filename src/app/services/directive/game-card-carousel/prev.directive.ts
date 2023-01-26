@@ -13,7 +13,7 @@ export class PrevDirective {
     let elm = this.el.nativeElement.parentElement.parentElement.parentElement.children[1];
     let itemContainer = elm.getElementsByClassName('slider-main');
     let item = elm.getElementsByClassName('item');
-    if (item.length > 5) {
+    if (item.length > 4) {
       itemContainer[0].prepend(item[item.length - 1]);
     }
   }

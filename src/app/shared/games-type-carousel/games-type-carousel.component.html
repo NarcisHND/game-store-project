@@ -1,0 +1,34 @@
+<div class="container games_type_carousel_component">
+  <div class="row">
+    <div class="col-12">
+      <section class="section_title_container">
+        <h2 class="section_title">Popular Genres</h2>
+        <div class="button-area">
+          <div class="prev" appPrev>
+            <mat-icon>navigate_before</mat-icon>
+          </div>
+          <div class="next" appNext>
+            <mat-icon>navigate_next</mat-icon>
+          </div>
+        </div>
+      </section>
+      <section class="product">
+        <div class="slider-wrap">
+          <div class="slider-main">
+            <div class="game_type_card item" *ngFor="let card of gameTypes">
+              <div class="card_header">
+                <div class="img_container">
+                  <img alt="{{card.name}}"
+                       src="{{card.img}}">
+                </div>
+              </div>
+              <div class="card_body">
+                <h2>{{card.name | titleUppercase}}</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

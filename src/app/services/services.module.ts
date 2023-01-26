@@ -10,6 +10,7 @@ import {
 } from './directive/recommended-games-carousel/select-game-html-element.directive';
 import {HoverCarouselDirective} from './directive/recommended-games-carousel/hover-carousel.directive';
 import {ScrollUpDirective} from './directive/scroll-up.directive';
+import {TitleUppercasePipe} from './pipes/title-uppercase.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {ScrollUpDirective} from './directive/scroll-up.directive';
     SelectGameHtmlElementDirective,
     HoverCarouselDirective,
     ScrollUpDirective,
+    TitleUppercasePipe
   ],
   imports: [
     CommonModule,
@@ -34,6 +36,7 @@ import {ScrollUpDirective} from './directive/scroll-up.directive';
     SelectGameHtmlElementDirective,
     HoverCarouselDirective,
     ScrollUpDirective,
+    TitleUppercasePipe,
   ]
 })
 export class ServicesModule {
