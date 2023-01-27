@@ -21,7 +21,7 @@ export class TopGamesComponent implements OnInit, OnDestroy {
   constructor(private gameDataService: GamesDataService, private router: Router, private route: ActivatedRoute) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.loadData();
   }
 
@@ -50,20 +50,20 @@ export class TopGamesComponent implements OnInit, OnDestroy {
     })
   }
 
-  selectGameByGamesData(game: GameModel) {
+  selectGameByGamesData(game: GameModel): void {
     this.router.navigate(['game', game.id, 'gamesData'], {
       relativeTo: this.route,
     })
   }
 
-  selectGameByFreeGamesData(game: FreeGameModel) {
-    this.gameDataService.fetchData().subscribe((res) => console.log(res))
+  selectGameByFreeGamesData(game: FreeGameModel): void {
+    // this.gameDataService.fetchData().subscribe((res) => console.log(res))
     this.router.navigate(['game', game.id, 'freeGamesData'], {
       relativeTo: this.route,
     })
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }

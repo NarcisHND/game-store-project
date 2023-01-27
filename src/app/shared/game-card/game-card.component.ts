@@ -19,7 +19,7 @@ export class GameCardComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (this.cardType === 'freeGames') {
       this.cardData = this.freeGames;
     } else if (this.cardType === 'carouselCard') {

@@ -11,6 +11,7 @@ import {
 import {HoverCarouselDirective} from './directive/recommended-games-carousel/hover-carousel.directive';
 import {ScrollUpDirective} from './directive/scroll-up.directive';
 import {TitleUppercasePipe} from './pipes/title-uppercase.pipe';
+import {BehaviorDropdownButtonDirective} from './directive/view-games/behavior-dropdown-button.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {TitleUppercasePipe} from './pipes/title-uppercase.pipe';
     SelectGameHtmlElementDirective,
     HoverCarouselDirective,
     ScrollUpDirective,
-    TitleUppercasePipe
+    TitleUppercasePipe,
+    BehaviorDropdownButtonDirective
   ],
   imports: [
     CommonModule,
@@ -37,6 +39,7 @@ import {TitleUppercasePipe} from './pipes/title-uppercase.pipe';
     HoverCarouselDirective,
     ScrollUpDirective,
     TitleUppercasePipe,
+    BehaviorDropdownButtonDirective
   ]
 })
 export class ServicesModule {

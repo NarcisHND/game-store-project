@@ -1,0 +1,26 @@
+.view_games_component {
+  .dropdown {
+    button {
+      font-size: $font-size-4;
+      color: $light-color-4;
+      outline: none;
+      border: none;
+
+      &:hover {
+        color: $light-color-2;
+      }
+    }
+
+    .dropdown-menu {
+      .dropdown-item {
+        font-size: $font-size-4;
+        cursor: pointer;
+        --bs-dropdown-link-active-bg: $light-color-3;
+
+        &.active {
+          background-color: $light-color-3;
+        }
+      }
+    }
+  }
+}

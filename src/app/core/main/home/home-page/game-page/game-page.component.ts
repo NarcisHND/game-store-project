@@ -18,7 +18,7 @@ export class GamePageComponent implements OnInit, OnDestroy {
   constructor(private route: ActivatedRoute, private gamesService: GamesDataService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     window.scrollTo(0, 0)
     this.loadData();
   }
@@ -73,7 +73,7 @@ export class GamePageComponent implements OnInit, OnDestroy {
     return this.gamesService.getGameFromFreeGamesData(id);
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }

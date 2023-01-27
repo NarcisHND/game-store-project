@@ -1,0 +1,31 @@
+<div class="view_games_component">
+  <div class="dropdown">
+    <button class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+      <strong>Show:</strong> All
+    </button>
+    <ul class="dropdown-menu dropdown-menu-dark">
+      <li><a class="dropdown-item" appBehaviorDropdownButton (click)="sortFunction('all')">All</a></li>
+      <li><a class="dropdown-item" appBehaviorDropdownButton (click)="sortFunction('alphabetical')">Alphabetical</a>
+      </li>
+      <li><a class="dropdown-item" appBehaviorDropdownButton (click)="sortFunction('desc')">Price: High to Low</a></li>
+      <li><a class="dropdown-item" appBehaviorDropdownButton (click)="sortFunction('asc')">Price: Low to High</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="row mt-4" *ngIf="!loading">
+  <div class="col-3" *ngFor="let game of allGames">
+    <app-game-card
+      [allGames]="game"
+      [cardType]="'carouselCard'"
+      [cardStyle]="{width: '200px', height: '360px', margin: '0 0 4rem 0'}"
+    ></app-game-card>
+  </div>
+</div>
+
+<div class="row mt-4" *ngIf="loading">
+  <div class="col-3" *ngFor="let placeholder of placeholders">
+    <div class="card_placeholder placeholder-wave" style="background-color: #393E46"></div>
+  </div>
+</div>
