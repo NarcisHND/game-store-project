@@ -1,6 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {Subscription} from "rxjs";
-import {GamesDataService} from "../../services/games-data.service";
+import {Component, Input, OnInit} from '@angular/core';
 import {GamesTypeCardModel} from "../../services/interface/gamesTypeCard-model";
 
 @Component({
@@ -9,20 +7,12 @@ import {GamesTypeCardModel} from "../../services/interface/gamesTypeCard-model";
   styleUrls: ['./games-type-carousel.component.scss']
 })
 export class GamesTypeCarouselComponent implements OnInit {
-  public gameTypes!: GamesTypeCardModel[];
-  private subscription!: Subscription;
+  @Input() public gameTypes!: GamesTypeCardModel[];
 
-  constructor(private gamesDataService: GamesDataService) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.subscription = this.gamesDataService.getGamesTypesCard().subscribe({
-      next: (res) => {
-        this.gameTypes = res;
-      }, error: (err) => {
-        console.log(err);
-      }
-    })
   }
 
 }

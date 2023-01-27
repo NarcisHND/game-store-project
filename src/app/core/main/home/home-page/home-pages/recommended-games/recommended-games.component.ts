@@ -21,7 +21,7 @@ export class RecommendedGamesComponent implements OnInit, OnDestroy {
   constructor(private gamesDataService: GamesDataService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.loadData();
   }
 

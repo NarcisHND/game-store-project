@@ -6,6 +6,9 @@ import {ServicesModule} from "../services/services.module";
 import {CardCarouselComponent} from './card-carousel/card-carousel.component';
 import {CardDetailsComponent} from './card-details/card-details.component';
 import {GamesTypeCarouselComponent} from './games-type-carousel/games-type-carousel.component';
+import {
+  GamesTypeCarouselPlaceholderComponent
+} from './games-type-carousel/games-type-carousel-placeholder/games-type-carousel-placeholder.component';
 
 
 @NgModule({
@@ -13,13 +16,15 @@ import {GamesTypeCarouselComponent} from './games-type-carousel/games-type-carou
     GameCardComponent,
     CardCarouselComponent,
     CardDetailsComponent,
-    GamesTypeCarouselComponent
+    GamesTypeCarouselComponent,
+    GamesTypeCarouselPlaceholderComponent
   ],
   exports: [
     GameCardComponent,
     CardCarouselComponent,
     CardDetailsComponent,
-    GamesTypeCarouselComponent
+    GamesTypeCarouselComponent,
+    GamesTypeCarouselPlaceholderComponent
   ],
   imports: [
     CommonModule,

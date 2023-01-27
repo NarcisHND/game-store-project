@@ -16,6 +16,8 @@ import { HomePagesComponent } from './home-page/home-pages/home-pages.component'
 import { GamePageComponent } from './home-page/game-page/game-page.component';
 import { PlaceholderGamePageComponent } from './home-page/game-page/placeholder-game-page/placeholder-game-page.component';
 import { BrowsePageComponent } from './home-page/browse-page/browse-page.component';
+import { ViewGamesComponent } from './home-page/browse-page/view-games/view-games.component';
+import { GamesFilterComponent } from './home-page/browse-page/games-filter/games-filter.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { BrowsePageComponent } from './home-page/browse-page/browse-page.compone
     GamePageComponent,
     PlaceholderGamePageComponent,
     BrowsePageComponent,
+    ViewGamesComponent,
+    GamesFilterComponent,
   ],
   imports: [
     CommonModule,

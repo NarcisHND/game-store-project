@@ -17,7 +17,7 @@ export class FreeGamesComponent implements OnInit, OnDestroy {
   constructor(private gamesDataService: GamesDataService, private router: Router, private route: ActivatedRoute) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.loadData();
   }
 
@@ -35,13 +35,13 @@ export class FreeGamesComponent implements OnInit, OnDestroy {
     })
   }
 
-  selectGame(game: FreeGameModel) {
+  selectGame(game: FreeGameModel): void {
     this.router.navigate(['game', game.id, 'freeGamesData'], {
       relativeTo: this.route,
     })
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
