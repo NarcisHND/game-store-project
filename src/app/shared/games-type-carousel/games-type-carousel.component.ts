@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {GamesTypeCardModel} from "../../services/interface/gamesTypeCard-model";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-games-type-carousel',
@@ -9,10 +10,13 @@ import {GamesTypeCardModel} from "../../services/interface/gamesTypeCard-model";
 export class GamesTypeCarouselComponent implements OnInit {
   @Input() public gameTypes!: GamesTypeCardModel[];
 
-  constructor() {
+  constructor(private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
   }
 
+  selectGamesType(game: GamesTypeCardModel): void {
+    this.router.navigate(['games', game.name], {relativeTo: this.route});
+  }
 }

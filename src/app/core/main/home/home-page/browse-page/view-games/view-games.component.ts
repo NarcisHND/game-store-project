@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 import {Subscription} from "rxjs";
 import {GamesDataService} from "../../../../../../services/games-data.service";
 import {GameModel} from "../../../../../../services/interface/game.model";
@@ -15,6 +15,11 @@ export class ViewGamesComponent implements OnInit, OnDestroy {
   public backupGames!: GameModel[];
   public loading: boolean = false;
   public placeholders: {}[] = [{}, {}, {}, {}, {}, {}, {}, {}];
+  private filterActivation: boolean = false;
+  private orderData!: string;
+  @Input() public gamesType!: string | null;
+
+  @Input() public filterData!: string;
 
   constructor(private gamesDataService: GamesDataService) {
   }
@@ -29,6 +34,9 @@ export class ViewGamesComponent implements OnInit, OnDestroy {
       next: (res) => {
         this.allGames = res;
         this.backupGames = res;
+        if (this.gamesType) {
+          this.filterFunction(this.gamesType);
+        }
         this.loading = false;
       }, error: (err) => {
         console.log(err);
@@ -38,10 +46,22 @@ export class ViewGamesComponent implements OnInit, OnDestroy {
   }
 
   sortFunction(order: string): void {
-    this.allGames = [];
-    const sortGames: GameModel[] = this.backupGames.slice();
+    let sortGames!: GameModel[];
+    this.orderData = order;
+
+    if (this.filterActivation) {
+      sortGames = this.allGames;
+    } else {
+      this.allGames = [];
+      sortGames = this.backupGames.slice();
+    }
+
     if (order === 'all') {
-      this.allGames = this.backupGames.slice();
+      if (this.gamesType) {
+        this.filterFunction(this.gamesType)
+      } else {
+        this.allGames = this.backupGames.slice();
+      }
     } else if (order === 'asc') {
       const ascOrder: GameModel[] = sortGames.sort((a, b) => (a.price > b.price) ? 1 : ((b.price > a.price) ? -1 : 0));
       this.allGames = ascOrder;
@@ -51,6 +71,17 @@ export class ViewGamesComponent implements OnInit, OnDestroy {
     } else if (order === 'alphabetical') {
       const alphOrder: GameModel[] = sortGames.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
       this.allGames = alphOrder;
+    }
+  }
+
+  filterFunction(type: string): void {
+    this.filterActivation = true;
+    this.allGames = [];
+    const data = this.backupGames.slice();
+    this.allGames = data.filter((game) => game.type === type);
+
+    if (this.orderData !== 'all' && this.orderData !== undefined) {
+      this.sortFunction(this.orderData);
     }
   }
 
