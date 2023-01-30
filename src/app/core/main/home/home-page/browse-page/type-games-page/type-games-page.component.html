@@ -1,4 +1,4 @@
-<section class="type_games_page">
+<section class="type_games_page_section">
   <div class="container">
     <h1 class="section_title">{{gamesType ? (gamesType | titlecase) + ' ' + 'Games' : 'Games Type'}}</h1>
     <p class="section_description">Download and play {{gamesType | titlecase}} games from Game Store. We offer some of
@@ -8,8 +8,9 @@
       <div class="col-9">
         <app-view-games [gamesType]="gamesType"></app-view-games>
       </div>
-      <div class="col-3"></div>
+      <div class="col-3">
+        <app-games-filter></app-games-filter>
+      </div>
     </div>
-
   </div>
 </section>

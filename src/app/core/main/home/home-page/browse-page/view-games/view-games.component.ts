@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Subscription} from "rxjs";
 import {GamesDataService} from "../../../../../../services/games-data.service";
 import {GameModel} from "../../../../../../services/interface/game.model";
@@ -20,6 +20,7 @@ export class ViewGamesComponent implements OnInit, OnDestroy {
   @Input() public gamesType!: string | null;
 
   @Input() public filterData!: string;
+
 
   constructor(private gamesDataService: GamesDataService) {
   }
