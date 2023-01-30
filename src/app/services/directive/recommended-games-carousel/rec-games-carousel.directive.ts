@@ -1,10 +1,10 @@
-import {AfterViewInit, Directive, ElementRef, HostListener, Renderer2} from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, HostListener, OnDestroy, Renderer2} from '@angular/core';
 
 
 @Directive({
   selector: '[appRecGamesCarousel]'
 })
-export class RecGamesCarouselDirective implements AfterViewInit {
+export class RecGamesCarouselDirective implements AfterViewInit, OnDestroy {
   private htmlElCarousel!: NodeList;
   private carouselFunction!: Function;
   private htmlElGameCards!: NodeList;
@@ -76,5 +76,9 @@ export class RecGamesCarouselDirective implements AfterViewInit {
 
   startCarousel(): void {
     this.createCarouselInterval = setInterval(this.carouselFunction, 3000);
+  }
+
+  ngOnDestroy() {
+    this.startCarousel();
   }
 }

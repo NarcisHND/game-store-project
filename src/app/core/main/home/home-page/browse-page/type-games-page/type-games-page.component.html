@@ -1,0 +1,15 @@
+<section class="type_games_page">
+  <div class="container">
+    <h1 class="section_title">{{gamesType ? (gamesType | titlecase) + ' ' + 'Games' : 'Games Type'}}</h1>
+    <p class="section_description">Download and play {{gamesType | titlecase}} games from Game Store. We offer some of
+      the best and most exciting {{gamesType | titlecase}} games.</p>
+
+    <div class="row">
+      <div class="col-9">
+        <app-view-games [gamesType]="gamesType"></app-view-games>
+      </div>
+      <div class="col-3"></div>
+    </div>
+
+  </div>
+</section>

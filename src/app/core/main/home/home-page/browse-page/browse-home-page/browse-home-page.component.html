@@ -1,0 +1,13 @@
+<div class="container">
+  <app-games-type-carousel [gameTypes]="cardsData"
+                           *ngIf="!loading"></app-games-type-carousel>
+  <app-games-type-carousel-placeholder *ngIf="loading"></app-games-type-carousel-placeholder>
+  <div class="row">
+    <div class="col-9 game_cards_col">
+      <app-view-games [filterData]="filterData"></app-view-games>
+    </div>
+    <div class="col-3 filter_col">
+      <app-games-filter></app-games-filter>
+    </div>
+  </div>
+</div>
