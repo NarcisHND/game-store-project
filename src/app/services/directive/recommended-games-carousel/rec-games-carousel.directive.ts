@@ -16,8 +16,9 @@ export class RecGamesCarouselDirective implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     this.htmlElCarousel = this.elRef.nativeElement.parentElement.parentElement.firstChild.querySelectorAll('.carousel-item');
-    this.renderer.addClass(this.htmlElCarousel[0], 'active');
     this.htmlElGameCards = this.elRef.nativeElement.parentElement.querySelectorAll('.rec_games_card_container');
+
+    this.renderer.addClass(this.htmlElCarousel[0], 'active');
     this.renderer.addClass(this.htmlElGameCards[0], 'active_card');
 
     this.carouselFunction = (): void => {
@@ -25,9 +26,11 @@ export class RecGamesCarouselDirective implements AfterViewInit, OnDestroy {
       this.htmlElCarousel.forEach((el: any, index: number) => {
         if (el.id === 'stopCarousel') {
           this.carouselActivation = false;
+
         } else {
           this.carouselActivation = true;
-          if (el.className === 'carousel-item active') {
+
+          if (el.className.includes('active')) {
             this.renderer.removeClass(el, 'active');
             this.renderer.removeClass(this.htmlElGameCards[index], 'active_card');
             activeIndex = index;
@@ -55,11 +58,10 @@ export class RecGamesCarouselDirective implements AfterViewInit, OnDestroy {
       }
     });
     this.htmlElCarousel.forEach((el: any, index: number) => {
-      if (el.className === 'carousel-item active') {
+      if (el.className.includes('active')) {
         this.renderer.removeClass(el, 'active');
         this.renderer.removeClass(this.htmlElGameCards[index], 'active_card');
       }
-
       const gameImageName = el.firstChild.src;
       if (gameCard === gameImageName) {
         this.renderer.addClass(el, 'active');
@@ -75,10 +77,10 @@ export class RecGamesCarouselDirective implements AfterViewInit, OnDestroy {
   }
 
   startCarousel(): void {
-    this.createCarouselInterval = setInterval(this.carouselFunction, 3000);
+    this.createCarouselInterval = setInterval(this.carouselFunction, 2000);
   }
 
   ngOnDestroy() {
-    this.startCarousel();
+    this.stopCarousel();
   }
 }

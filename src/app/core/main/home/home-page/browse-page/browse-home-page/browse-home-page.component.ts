@@ -1,7 +1,8 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {GamesTypeCardModel} from "../../../../../../services/interface/gamesTypeCard-model";
 import {Subscription} from "rxjs";
 import {GamesDataService} from "../../../../../../services/games-data.service";
+import {GameModel} from "../../../../../../services/interface/game.model";
 
 @Component({
   selector: 'app-browse-home-page',
@@ -10,11 +11,14 @@ import {GamesDataService} from "../../../../../../services/games-data.service";
 })
 export class BrowseHomePageComponent implements OnInit, OnDestroy {
   public cardsData!: GamesTypeCardModel[];
+  public gamesData!: GameModel[];
+  public filteredData!: GameModel[];
   private subscription!: Subscription;
-  public loading: boolean = false;
-  public filterData!: string;
+  public loadingCards: boolean = false;
+  public loadingGames: boolean = false;
+  public placeholders: {}[] = [{}, {}, {}, {}, {}, {}, {}, {}];
 
-  constructor(private gameDataService: GamesDataService) {
+  constructor(private gamesDataService: GamesDataService, private cd: ChangeDetectorRef) {
   }
 
   ngOnInit() {
@@ -23,19 +27,38 @@ export class BrowseHomePageComponent implements OnInit, OnDestroy {
   }
 
   loadData(): void {
-    this.loading = true;
-    this.subscription = this.gameDataService.getGamesTypesCard().subscribe({
+    this.loadingCards = true;
+    this.loadingGames = true;
+
+    // Get Cards
+    this.subscription = this.gamesDataService.getGamesTypesCard().subscribe({
       next: (res) => {
         this.cardsData = res;
-        this.loading = false;
+        this.loadingCards = false;
       },
       error: (err) => {
         console.error(err);
-        this.loading = false;
+        this.loadingCards = false;
       }
     });
+
+    // Get Games
+    this.subscription = this.gamesDataService.getGames().subscribe({
+      next: (res) => {
+        this.gamesData = res;
+        this.loadingGames = false;
+      },
+      error: (err) => {
+        console.error(err);
+        this.loadingGames = false;
+      }
+    })
   }
 
+  getFilteredData(games: GameModel[]) {
+    this.filteredData = games;
+    this.cd.detectChanges();
+  }
 
   ngOnDestroy(): void {
     if (this.subscription) {

@@ -1,6 +1,6 @@
-<div class="view_games_component">
+<section class="view_games_component">
   <div class="dropdown">
-    <button class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
+    <button class="btn btn-lg dropdown-toggle filter_btn_dropdown" type="button" data-bs-toggle="dropdown"
             aria-expanded="false">
       <strong>Show:</strong> All
     </button>
@@ -12,20 +12,19 @@
       <li><a class="dropdown-item" appBehaviorDropdownButton (click)="sortFunction('asc')">Price: Low to High</a></li>
     </ul>
   </div>
-</div>
 
-<div class="row mt-4" *ngIf="!loading">
-  <div class="col-3" *ngFor="let game of allGames">
-    <app-game-card
-      [allGames]="game"
-      [cardType]="'carouselCard'"
-      [cardStyle]="{width: '200px', height: '360px', margin: '0 0 4rem 0'}"
-    ></app-game-card>
+  <div class="row mt-4">
+    <div class="col-3" *ngFor="let game of allGames">
+      <app-game-card
+        [allGames]="game"
+        [cardType]="'carouselCard'"
+        [cardStyle]="{width: '200px', height: '360px', margin: '0 0 4rem 0'}"
+      ></app-game-card>
+    </div>
   </div>
-</div>
 
-<div class="row mt-4" *ngIf="loading">
-  <div class="col-3" *ngFor="let placeholder of placeholders">
-    <div class="card_placeholder placeholder-wave" style="background-color: #393E46"></div>
-  </div>
-</div>
+  <!--  <div class="no_game_message">-->
+  <!--    <h1 class="title_message">No results found</h1>-->
+  <!--    <p class="message">Unfortunately I could not find any results matching your search.</p>-->
+  <!--  </div>-->
+</section>
