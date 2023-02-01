@@ -13,7 +13,6 @@ export class BehaviorDropdownButtonDirective implements OnInit {
     this.renderer.addClass(firstItem, 'active');
   }
 
-
   @HostListener('click')
   setActive(): void {
     const dropdownMenu = this.elRef.nativeElement.parentElement.parentElement;

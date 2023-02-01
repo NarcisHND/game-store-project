@@ -5,7 +5,9 @@ import {HomePagesComponent} from "./home-page/home-pages/home-pages.component";
 import {GamePageComponent} from "./home-page/game-page/game-page.component";
 import {BrowsePageComponent} from "./home-page/browse-page/browse-page.component";
 import {BrowseHomePageComponent} from "./home-page/browse-page/browse-home-page/browse-home-page.component";
-import {TypeGamesPageComponent} from "./home-page/browse-page/type-games-page/type-games-page.component";
+import {
+  TypeGamesPageComponent
+} from "./home-page/browse-page/browse-home-page/type-games-page/type-games-page.component";
 
 
 const routes: Routes = [

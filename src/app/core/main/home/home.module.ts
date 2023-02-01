@@ -18,11 +18,14 @@ import {
   PlaceholderGamePageComponent
 } from './home-page/game-page/placeholder-game-page/placeholder-game-page.component';
 import {BrowsePageComponent} from './home-page/browse-page/browse-page.component';
-import {ViewGamesComponent} from './home-page/browse-page/view-games/view-games.component';
-import {GamesFilterComponent} from './home-page/browse-page/games-filter/games-filter.component';
+import {ViewGamesComponent} from './home-page/browse-page/browse-home-page/view-games/view-games.component';
+import {GamesFilterComponent} from './home-page/browse-page/browse-home-page/games-filter/games-filter.component';
 import {BrowseHomePageComponent} from './home-page/browse-page/browse-home-page/browse-home-page.component';
-import {TypeGamesPageComponent} from './home-page/browse-page/type-games-page/type-games-page.component';
-import {FormsModule} from "@angular/forms";
+import {
+  TypeGamesPageComponent
+} from './home-page/browse-page/browse-home-page/type-games-page/type-games-page.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
 @NgModule({
   declarations: [
@@ -48,7 +51,9 @@ import {FormsModule} from "@angular/forms";
     SharedModule,
     ServicesModule,
     LayoutModule,
-    FormsModule
+    FormsModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule
   ],
   providers: [
     GamesDataService

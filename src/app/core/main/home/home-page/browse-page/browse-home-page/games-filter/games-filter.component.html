@@ -3,12 +3,26 @@
     <h2 class="section_title">Filters:</h2>
     <h2 class="reset_btn">Reset</h2>
   </div>
-  <div class="search_input_container ">
-    <div class="icon_container" (click)="searchGame()">
-      <i class="fa-solid fa-magnifying-glass"></i>
+
+  <form class="example-form">
+    <div class="search_input_container ">
+      <div class="icon_container">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <input type="text"
+             placeholder="Search for a game"
+             [formControl]="control"
+             [matAutocomplete]="auto"
+             class="search_input"
+             appResetOrder>
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let game of filteredData | async" [value]="game">
+          {{game}}
+        </mat-option>
+      </mat-autocomplete>
     </div>
-    <input type="search" class="search_input" id="search" name="q" [(ngModel)]="value">
-  </div>
+  </form>
+
   <div class="accordion" id="accordionPanelsStayOpenExample">
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingOne">

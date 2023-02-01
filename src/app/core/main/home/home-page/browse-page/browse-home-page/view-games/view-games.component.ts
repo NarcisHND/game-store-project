@@ -1,8 +1,6 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from "rxjs";
-import {GamesDataService} from "../../../../../../services/games-data.service";
-import {GameModel} from "../../../../../../services/interface/game.model";
-
+import {GameModel} from "../../../../../../../services/interface/game.model";
 
 @Component({
   selector: 'app-view-games',
@@ -11,18 +9,13 @@ import {GameModel} from "../../../../../../services/interface/game.model";
 })
 export class ViewGamesComponent implements OnInit, OnDestroy {
   private subscription!: Subscription;
-  public allGames!: GameModel[];
+  @Input() public allGames!: GameModel[];
   public backupGames!: GameModel[];
-  public loading: boolean = false;
-  public placeholders: {}[] = [{}, {}, {}, {}, {}, {}, {}, {}];
   private filterActivation: boolean = false;
   private orderData!: string;
   @Input() public gamesType!: string | null;
 
-  @Input() public filterData!: string;
-
-
-  constructor(private gamesDataService: GamesDataService) {
+  constructor() {
   }
 
   ngOnInit(): void {
@@ -30,23 +23,13 @@ export class ViewGamesComponent implements OnInit, OnDestroy {
   }
 
   loadData(): void {
-    this.loading = true;
-    this.subscription = this.gamesDataService.getGames().subscribe({
-      next: (res) => {
-        this.allGames = res;
-        this.backupGames = res;
-        if (this.gamesType) {
-          this.filterFunction(this.gamesType);
-        }
-        this.loading = false;
-      }, error: (err) => {
-        console.log(err);
-        this.loading = false;
-      }
-    })
+    if (this.gamesType) {
+      this.filterFunction(this.gamesType);
+    }
   }
 
   sortFunction(order: string): void {
+    this.backupGames = this.allGames;
     let sortGames!: GameModel[];
     this.orderData = order;
 
