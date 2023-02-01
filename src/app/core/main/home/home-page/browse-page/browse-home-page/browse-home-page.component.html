@@ -3,22 +3,19 @@
                            *ngIf="!loadingCards"></app-games-type-carousel>
   <app-games-type-carousel-placeholder *ngIf="loadingCards"></app-games-type-carousel-placeholder>
   <div class="row">
-    <div class="col-9 game_cards_col">
-      <app-view-games *ngIf="!loadingGames"
-                      [allGames]="filteredData"
+    <div class="col-9 game_cards_col" *ngIf="!loadingGames">
+      <app-view-games
+        [allGames]="filteredData"
       ></app-view-games>
-
-      <div class="row mt-4" *ngIf="loadingGames">
-        <div class="col-3" *ngFor="let placeholder of placeholders">
-          <div class="card_placeholder placeholder-wave" style="background-color: #393E46"></div>
-        </div>
-      </div>
     </div>
-    <div class="col-3 filter_col">
-      <app-games-filter *ngIf="!loadingGames"
-                        [gamesData]="gamesData"
-                        (filteredGamesEvent)="getFilteredData($event)"
+
+    <div class="col-3 filter_col" *ngIf="!loadingGames">
+      <app-games-filter
+        [gamesData]="gamesData"
+        (filteredGamesEvent)="getFilteredData($event)"
       ></app-games-filter>
     </div>
+
+    <app-browser-page-placeholder *ngIf="loadingGames"></app-browser-page-placeholder>
   </div>
 </div>

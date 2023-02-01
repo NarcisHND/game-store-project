@@ -6,11 +6,17 @@
 
     <div class="row">
       <div class="col-9">
-        <app-view-games [gamesType]="gamesType"></app-view-games>
+        <app-view-games [allGames]="filteredData"></app-view-games>
       </div>
+
       <div class="col-3">
-        <app-games-filter></app-games-filter>
+        <app-games-filter *ngIf="!loading"
+                          [gamesData]="gamesData"
+                          (filteredGamesEvent)="getFilteredData($event)"
+        ></app-games-filter>
       </div>
+
+      <app-browser-page-placeholder *ngIf="loading"></app-browser-page-placeholder>
     </div>
   </div>
 </section>

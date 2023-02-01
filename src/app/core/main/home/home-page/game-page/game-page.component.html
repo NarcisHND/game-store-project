@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col-8 game_preview">
         <video autoplay muted loop width="800rem">
-          <source *ngIf="gameData.type === 'shooters'"
+          <source *ngIf="gameData.type === 'shooter'"
                   src="https://www.shutterstock.com/shutterstock/videos/1092822561/preview/stock-footage-soldier-model-selection-screen-in-the-warfare-simulator-video-game-selecting-the-soldiers-in-the.webm">
           <source *ngIf="gameData.type === 'action-adventure'"
                   src="https://www.shutterstock.com/shutterstock/videos/1033295393/preview/stock-footage-space-shooter-d-video-game-imitation-the-spacecraft-in-space-destroys-the-enemy-crew-with-a-laser.webm">
@@ -238,7 +238,7 @@
     </div>
   </div>
 </section>
-<app-placeholder-game-page *ngIf="loading"></app-placeholder-game-page>
+<app-game-page-placeholder *ngIf="loading"></app-game-page-placeholder>
 
 
 
