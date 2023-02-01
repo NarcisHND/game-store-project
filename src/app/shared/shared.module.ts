@@ -9,6 +9,10 @@ import {GamesTypeCarouselComponent} from './games-type-carousel/games-type-carou
 import {
   GamesTypeCarouselPlaceholderComponent
 } from './games-type-carousel/games-type-carousel-placeholder/games-type-carousel-placeholder.component';
+import {PlaceholderGamePageComponent} from "./placeholders/game-page-placeholder/placeholder-game-page.component";
+import {
+  BrowserPagePlaceholderComponent
+} from './placeholders/browser-page-placeholder/browser-page-placeholder.component';
 
 
 @NgModule({
@@ -17,14 +21,18 @@ import {
     CardCarouselComponent,
     CardDetailsComponent,
     GamesTypeCarouselComponent,
-    GamesTypeCarouselPlaceholderComponent
+    GamesTypeCarouselPlaceholderComponent,
+    PlaceholderGamePageComponent,
+    BrowserPagePlaceholderComponent
   ],
   exports: [
     GameCardComponent,
     CardCarouselComponent,
     CardDetailsComponent,
     GamesTypeCarouselComponent,
-    GamesTypeCarouselPlaceholderComponent
+    GamesTypeCarouselPlaceholderComponent,
+    PlaceholderGamePageComponent,
+    BrowserPagePlaceholderComponent
   ],
   imports: [
     CommonModule,

@@ -14,9 +14,6 @@ import {PopularGamesComponent} from './home-page/home-pages/popular-games/popula
 import {LayoutModule} from "../layout/layout.module";
 import {HomePagesComponent} from './home-page/home-pages/home-pages.component';
 import {GamePageComponent} from './home-page/game-page/game-page.component';
-import {
-  PlaceholderGamePageComponent
-} from './home-page/game-page/placeholder-game-page/placeholder-game-page.component';
 import {BrowsePageComponent} from './home-page/browse-page/browse-page.component';
 import {ViewGamesComponent} from './home-page/browse-page/browse-home-page/view-games/view-games.component';
 import {GamesFilterComponent} from './home-page/browse-page/browse-home-page/games-filter/games-filter.component';
@@ -37,7 +34,6 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
     PopularGamesComponent,
     HomePagesComponent,
     GamePageComponent,
-    PlaceholderGamePageComponent,
     BrowsePageComponent,
     ViewGamesComponent,
     GamesFilterComponent,
