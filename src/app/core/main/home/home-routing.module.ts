@@ -18,7 +18,7 @@ const routes: Routes = [
       {
         path: 'browse', component: BrowsePageComponent, children: [
           {path: '', component: BrowseHomePageComponent},
-          {path: 'games/:type', component: TypeGamesPageComponent}
+          {path: 'games/:type', component: TypeGamesPageComponent},
         ]
       },
     ]

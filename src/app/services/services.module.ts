@@ -13,6 +13,7 @@ import {ScrollUpDirective} from './directive/scroll-up.directive';
 import {TitleUppercasePipe} from './pipes/title-uppercase.pipe';
 import {BehaviorDropdownButtonDirective} from './directive/view-games/behavior-dropdown-button.directive';
 import {ResetOrderDirective} from './directive/games-filter/reset-order.directive';
+import {ResetDropdownFilterDirective} from './directive/games-filter/reset-dropdown-filter.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {ResetOrderDirective} from './directive/games-filter/reset-order.directiv
     ScrollUpDirective,
     TitleUppercasePipe,
     BehaviorDropdownButtonDirective,
-    ResetOrderDirective
+    ResetOrderDirective,
+    ResetDropdownFilterDirective
   ],
   imports: [
     CommonModule,
@@ -42,7 +44,8 @@ import {ResetOrderDirective} from './directive/games-filter/reset-order.directiv
     ScrollUpDirective,
     TitleUppercasePipe,
     BehaviorDropdownButtonDirective,
-    ResetOrderDirective
+    ResetOrderDirective,
+    ResetDropdownFilterDirective
   ]
 })
 export class ServicesModule {

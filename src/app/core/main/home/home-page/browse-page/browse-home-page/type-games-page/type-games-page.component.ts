@@ -15,6 +15,7 @@ export class TypeGamesPageComponent implements OnInit, OnDestroy {
   public gamesData!: GameModel[];
   public loading: boolean = false;
   public filteredData!: GameModel[];
+  public message: boolean = false;
 
 
   constructor(
@@ -43,6 +44,11 @@ export class TypeGamesPageComponent implements OnInit, OnDestroy {
 
   getFilteredData(event: GameModel[]): void {
     this.filteredData = event;
+    if (this.filteredData.length === 0) {
+      this.message = true;
+    } else {
+      this.message = false;
+    }
     this.cd.detectChanges();
   }
 

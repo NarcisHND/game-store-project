@@ -6,6 +6,7 @@
     <div class="col-9 game_cards_col" *ngIf="!loadingGames">
       <app-view-games
         [allGames]="filteredData"
+        [showMessage]="message"
       ></app-view-games>
     </div>
 

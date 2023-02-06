@@ -13,7 +13,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class TopGamesComponent implements OnInit, OnDestroy {
   public topSellers!: GameModel[];
   public mostPlayed!: GameModel[];
-  public topUpcoming!: FreeGameModel[];
+  public topUpcoming!: GameModel[];
   private subscription!: Subscription;
   public firstLoading: boolean = false;
   public secondLoading: boolean = false;
@@ -41,7 +41,7 @@ export class TopGamesComponent implements OnInit, OnDestroy {
 
     this.subscription = this.gameDataService.getFreeGames().subscribe({
       next: (res) => {
-        this.topUpcoming = this.gameDataService.selectFreeRandomGames(5, res);
+        this.topUpcoming = this.gameDataService.selectAllRandomGames(5, res);
         this.secondLoading = false;
       },
       error: (err) => {
@@ -56,7 +56,7 @@ export class TopGamesComponent implements OnInit, OnDestroy {
     })
   }
 
-  selectGameByFreeGamesData(game: FreeGameModel): void {
+  selectGameByFreeGamesData(game: GameModel): void {
     // this.gameDataService.fetchData().subscribe((res) => console.log(res))
     this.router.navigate(['game', game.id, 'freeGamesData'], {
       relativeTo: this.route,

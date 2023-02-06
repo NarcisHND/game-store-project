@@ -1,6 +1,7 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from "rxjs";
 import {GameModel} from "../../../../../../../services/interface/game.model";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-view-games',
@@ -14,8 +15,9 @@ export class ViewGamesComponent implements OnInit, OnDestroy {
   private filterActivation: boolean = false;
   private orderData!: string;
   @Input() public gamesType!: string | null;
+  @Input() public showMessage!: boolean;
 
-  constructor() {
+  constructor(private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -67,6 +69,10 @@ export class ViewGamesComponent implements OnInit, OnDestroy {
     if (this.orderData !== 'all' && this.orderData !== undefined) {
       this.sortFunction(this.orderData);
     }
+  }
+
+  selectGame(game: GameModel) {
+    this.router.navigate(['home/game', game.id, 'gamesData']);
   }
 
   ngOnDestroy(): void {

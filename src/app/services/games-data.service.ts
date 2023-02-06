@@ -18,8 +18,8 @@ export class GamesDataService {
     return this.http.get<GameModel>(environment.fireBaseUrl + 'gamesData/' + id + '.json');
   }
 
-  getGameFromFreeGamesData(id: number): Observable<FreeGameModel> {
-    return this.http.get<FreeGameModel>(environment.fireBaseUrl + 'freeGamesData/' + id + '.json');
+  getGameFromFreeGamesData(id: number): Observable<GameModel> {
+    return this.http.get<GameModel>(environment.fireBaseUrl + 'freeGamesData/' + id + '.json');
   }
 
   getGameFromLandscapeGamesData(id: number): Observable<GameModel> {
@@ -42,8 +42,8 @@ export class GamesDataService {
     return this.http.get<GameModel[]>(environment.fireBaseUrl + 'landscapeGamesData.json');
   }
 
-  getFreeGames(): Observable<FreeGameModel[]> {
-    return this.http.get<FreeGameModel[]>(environment.fireBaseUrl + 'freeGamesData.json');
+  getFreeGames(): Observable<GameModel[]> {
+    return this.http.get<GameModel[]>(environment.fireBaseUrl + 'freeGamesData.json');
   }
 
   // fetchData() {
@@ -60,17 +60,17 @@ export class GamesDataService {
     return this.randomFunction(numberGames, randomNumber, gameData, games, sortSet, uniqueSet);
   }
 
-  selectFreeRandomGames(numberGames: number, gamesData: FreeGameModel[]): FreeGameModel[] {
-    let gameData: FreeGameModel[] = gamesData;
-    let randomNumber!: number;
-    let uniqueSet: FreeGameModel[] = [];
-    let sortSet!: Set<FreeGameModel>;
-    let games: FreeGameModel[] = [];
+  // selectFreeRandomGames(numberGames: number, gamesData: FreeGameModel[]): FreeGameModel[] {
+  //   let gameData: FreeGameModel[] = gamesData;
+  //   let randomNumber!: number;
+  //   let uniqueSet: FreeGameModel[] = [];
+  //   let sortSet!: Set<FreeGameModel>;
+  //   let games: FreeGameModel[] = [];
+  //
+  //   return this.randomFunction(numberGames, randomNumber, gameData, games, sortSet, uniqueSet);
+  // }
 
-    return this.randomFunction(numberGames, randomNumber, gameData, games, sortSet, uniqueSet);
-  }
-
-  randomFunction(numberGames: number, randomNumber: number, gameData: FreeGameModel[] | GameModel[], games: unknown[], sortSet: any, uniqueSet: any) {
+  randomFunction(numberGames: number, randomNumber: number, gameData: GameModel[], games: unknown[], sortSet: any, uniqueSet: any) {
     do {
       randomNumber = Math.floor(Math.random() * gameData.length);
       if (gameData) {
