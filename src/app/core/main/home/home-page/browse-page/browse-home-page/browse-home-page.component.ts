@@ -16,7 +16,7 @@ export class BrowseHomePageComponent implements OnInit, OnDestroy {
   private subscription!: Subscription;
   public loadingCards: boolean = false;
   public loadingGames: boolean = false;
-  public placeholders: {}[] = [{}, {}, {}, {}, {}, {}, {}, {}];
+  public message: boolean = false;
 
   constructor(private gamesDataService: GamesDataService, private cd: ChangeDetectorRef) {
   }
@@ -45,18 +45,32 @@ export class BrowseHomePageComponent implements OnInit, OnDestroy {
     // Get Games
     this.subscription = this.gamesDataService.getGames().subscribe({
       next: (res) => {
-        this.gamesData = res;
-        this.loadingGames = false;
+        this.subscription = this.gamesDataService.getFreeGames().subscribe({
+          next: (freeGames) => {
+            let selectFreeGames = freeGames.filter(game => game.price === 'free');
+            this.gamesData = res.concat(selectFreeGames);
+            this.loadingGames = false;
+          },
+          error: (err) => {
+            console.error(err);
+            this.loadingGames = false;
+          }
+        })
       },
       error: (err) => {
         console.error(err);
         this.loadingGames = false;
       }
-    })
+    });
   }
 
   getFilteredData(games: GameModel[]) {
     this.filteredData = games;
+    if (this.filteredData.length === 0) {
+      this.message = true;
+    } else {
+      this.message = false;
+    }
     this.cd.detectChanges();
   }
 

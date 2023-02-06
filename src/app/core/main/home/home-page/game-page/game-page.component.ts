@@ -2,7 +2,6 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {GamesDataService} from "../../../../../services/games-data.service";
 import {GameModel} from "../../../../../services/interface/game.model";
-import {FreeGameModel} from "../../../../../services/interface/free-game.model";
 import {Observable, Subscription} from "rxjs";
 
 @Component({
@@ -12,7 +11,7 @@ import {Observable, Subscription} from "rxjs";
 })
 export class GamePageComponent implements OnInit, OnDestroy {
   public loading: boolean = false;
-  public gameData!: GameModel | FreeGameModel;
+  public gameData!: GameModel;
   private subscription!: Subscription;
 
   constructor(private route: ActivatedRoute, private gamesService: GamesDataService) {
@@ -69,7 +68,7 @@ export class GamePageComponent implements OnInit, OnDestroy {
     return this.gamesService.getGameFromGamesData(id);
   }
 
-  loadGameFromFreeGamesData(id: number): Observable<FreeGameModel> {
+  loadGameFromFreeGamesData(id: number): Observable<GameModel> {
     return this.gamesService.getGameFromFreeGamesData(id);
   }
 

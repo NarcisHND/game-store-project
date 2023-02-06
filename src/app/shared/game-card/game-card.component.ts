@@ -9,7 +9,7 @@ import {FreeGameModel} from "../../services/interface/free-game.model";
 })
 export class GameCardComponent implements OnInit {
   @Input() public allGames!: GameModel;
-  @Input() public freeGames!: FreeGameModel;
+  @Input() public freeGames!: GameModel;
   @Input() public landScapeGames!: GameModel;
   @Input() public cardStyle!: {};
   @Input() public cardType!: string;

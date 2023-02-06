@@ -1,7 +1,8 @@
 <section class="games_filter_section">
   <div class="section_title_container">
-    <h2 class="section_title">Filters:</h2>
-    <h2 class="reset_btn">Reset</h2>
+    <h2 class="section_title">
+      Filters: {{filtersNumber ? (filtersNumber) : ''}}</h2>
+    <h2 class="reset_btn" (click)="resetFilter()" appResetDropdownFilter>Reset</h2>
   </div>
 
   <form class="example-form">
@@ -16,7 +17,7 @@
              class="search_input"
              appResetOrder>
       <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let game of filteredData | async" [value]="game">
+        <mat-option *ngFor="let game of filterObs | async" [value]="game">
           {{game}}
         </mat-option>
       </mat-autocomplete>
@@ -36,20 +37,28 @@
            aria-labelledby="panelsStayOpen-headingOne">
         <div class="accordion-body">
           <div class="price_items">
-            <input type="radio" name="price_value" class="btn-check" id="btn-check-price-1" autocomplete="off">
-            <label class="btn btn-outline-dark" for="btn-check-price-1">Free</label>
+            <input type="radio" name="price_value" class="btn-check btn-check-price" id="btn-check-price-1"
+                   autocomplete="off">
+            <label class="btn btn-outline-dark" for="btn-check-price-1"
+                   (click)="filterByPrice('free')">Free</label>
           </div>
           <div class="price_items">
-            <input type="radio" name="price_value" class="btn-check" id="btn-check-price-2" autocomplete="off">
-            <label class="btn btn-outline-dark" for="btn-check-price-2">Under RON 40.00</label>
+            <input type="radio" name="price_value" class="btn-check btn-check-price" id="btn-check-price-2"
+                   autocomplete="off">
+            <label class="btn btn-outline-dark" for="btn-check-price-2"
+                   (click)="filterByPrice(40)">Under RON 40.00</label>
           </div>
           <div class="price_items">
-            <input type="radio" name="price_value" class="btn-check" id="btn-check-price-3" autocomplete="off">
-            <label class="btn btn-outline-dark" for="btn-check-price-3">Under RON 80.00</label>
+            <input type="radio" name="price_value" class="btn-check btn-check-price" id="btn-check-price-3"
+                   autocomplete="off">
+            <label class="btn btn-outline-dark" for="btn-check-price-3"
+                   (click)="filterByPrice(80)">Under RON 80.00</label>
           </div>
           <div class="price_items">
-            <input type="radio" name="price_value" class="btn-check" id="btn-check-price-4" autocomplete="off">
-            <label class="btn btn-outline-dark" for="btn-check-price-4">RON 120.00 and above</label>
+            <input type="radio" name="price_value" class="btn-check btn-check-price" id="btn-check-price-4"
+                   autocomplete="off">
+            <label class="btn btn-outline-dark" for="btn-check-price-4"
+                   (click)="filterByPrice('above')">RON 80.00 and above</label>
           </div>
         </div>
       </div>
@@ -66,16 +75,22 @@
            aria-labelledby="panelsStayOpen-headingTwo">
         <div class="accordion-body">
           <div class="platform_items">
-            <input type="radio" name="platform_value" class="btn-check" id="btn-check-platform-1" autocomplete="off">
-            <label class="btn btn-outline-dark" for="btn-check-platform-1">PC</label>
+            <input type="radio" name="platform_value" class="btn-check btn-check-platform" id="btn-check-platform-1"
+                   autocomplete="off">
+            <label class="btn btn-outline-dark" for="btn-check-platform-1"
+                   (click)="filterByPlatform('pc')">PC</label>
           </div>
           <div class="platform_items">
-            <input type="radio" name="platform_value" class="btn-check" id="btn-check-platform-2" autocomplete="off">
-            <label class="btn btn-outline-dark" for="btn-check-platform-2">PS4</label>
+            <input type="radio" name="platform_value" class="btn-check btn-check-platform" id="btn-check-platform-2"
+                   autocomplete="off">
+            <label class="btn btn-outline-dark" for="btn-check-platform-2"
+                   (click)="filterByPlatform('ps4')">PS4</label>
           </div>
           <div class="platform_items">
-            <input type="radio" name="platform_value" class="btn-check" id="btn-check-platform-3" autocomplete="off">
-            <label class="btn btn-outline-dark" for="btn-check-platform-3">XBOX</label>
+            <input type="radio" name="platform_value" class="btn-check btn-check-platform" id="btn-check-platform-3"
+                   autocomplete="off">
+            <label class="btn btn-outline-dark" for="btn-check-platform-3"
+                   (click)="filterByPlatform('xbox')">XBOX</label>
           </div>
         </div>
       </div>

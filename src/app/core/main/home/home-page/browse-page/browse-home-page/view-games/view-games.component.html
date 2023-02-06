@@ -19,12 +19,13 @@
         [allGames]="game"
         [cardType]="'carouselCard'"
         [cardStyle]="{width: '200px', height: '360px', margin: '0 0 4rem 0'}"
+        (click)="selectGame(game)"
       ></app-game-card>
     </div>
   </div>
 
-  <!--  <div class="no_game_message">-->
-  <!--    <h1 class="title_message">No results found</h1>-->
-  <!--    <p class="message">Unfortunately I could not find any results matching your search.</p>-->
-  <!--  </div>-->
+  <div class="no_game_message" *ngIf="showMessage">
+    <h1 class="title_message">No results found</h1>
+    <p class="message">Unfortunately I could not find any results matching your search.</p>
+  </div>
 </section>

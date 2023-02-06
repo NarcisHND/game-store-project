@@ -3,6 +3,7 @@ import {GamesDataService} from "../../../../../../services/games-data.service";
 import {FreeGameModel} from "../../../../../../services/interface/free-game.model";
 import {Subscription} from "rxjs";
 import {ActivatedRoute, Router} from "@angular/router";
+import {GameModel} from "../../../../../../services/interface/game.model";
 
 @Component({
   selector: 'app-free-games',
@@ -10,7 +11,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./free-games.component.scss']
 })
 export class FreeGamesComponent implements OnInit, OnDestroy {
-  public freeRandomGames!: FreeGameModel[];
+  public freeRandomGames!: GameModel[];
   private subscription!: Subscription;
   public loading: boolean = false;
 
@@ -25,7 +26,7 @@ export class FreeGamesComponent implements OnInit, OnDestroy {
     this.loading = true;
     this.subscription = this.gamesDataService.getFreeGames().subscribe({
       next: (res) => {
-        this.freeRandomGames = this.gamesDataService.selectFreeRandomGames(4, res);
+        this.freeRandomGames = this.gamesDataService.selectAllRandomGames(4, res);
         this.loading = false;
       },
       error: (err) => {
@@ -35,7 +36,7 @@ export class FreeGamesComponent implements OnInit, OnDestroy {
     })
   }
 
-  selectGame(game: FreeGameModel): void {
+  selectGame(game: GameModel): void {
     this.router.navigate(['game', game.id, 'freeGamesData'], {
       relativeTo: this.route,
     })
