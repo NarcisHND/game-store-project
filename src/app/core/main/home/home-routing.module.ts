@@ -8,6 +8,7 @@ import {BrowseHomePageComponent} from "./home-page/browse-page/browse-home-page/
 import {
   TypeGamesPageComponent
 } from "./home-page/browse-page/browse-home-page/type-games-page/type-games-page.component";
+import {NewsPageComponent} from "./home-page/news-page/news-page.component";
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
           {path: 'games/:type', component: TypeGamesPageComponent},
         ]
       },
+      {path: 'news', component: NewsPageComponent}
     ]
   }
 ];

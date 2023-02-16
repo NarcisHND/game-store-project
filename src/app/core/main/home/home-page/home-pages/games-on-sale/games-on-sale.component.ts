@@ -18,7 +18,7 @@ export class GamesOnSaleComponent implements OnInit, OnDestroy {
   constructor(private gamesDataService: GamesDataService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.loadData();
   }
 
@@ -46,7 +46,7 @@ export class GamesOnSaleComponent implements OnInit, OnDestroy {
     })
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }

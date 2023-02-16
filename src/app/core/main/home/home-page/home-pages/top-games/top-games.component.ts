@@ -1,7 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {GamesDataService} from "../../../../../../services/games-data.service";
 import {GameModel} from "../../../../../../services/interface/game.model";
-import {FreeGameModel} from "../../../../../../services/interface/free-game.model";
 import {Subscription} from "rxjs";
 import {ActivatedRoute, Router} from "@angular/router";
 
@@ -21,7 +20,7 @@ export class TopGamesComponent implements OnInit, OnDestroy {
   constructor(private gameDataService: GamesDataService, private router: Router, private route: ActivatedRoute) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.loadData();
   }
 
@@ -57,13 +56,12 @@ export class TopGamesComponent implements OnInit, OnDestroy {
   }
 
   selectGameByFreeGamesData(game: GameModel): void {
-    // this.gameDataService.fetchData().subscribe((res) => console.log(res))
     this.router.navigate(['game', game.id, 'freeGamesData'], {
       relativeTo: this.route,
     })
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }

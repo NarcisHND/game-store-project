@@ -1,11 +1,11 @@
 import {Injectable} from "@angular/core";
 import {GameModel} from "./interface/game.model";
-import {FreeGameModel} from "./interface/free-game.model";
 import {RecommendedGameModel} from "./interface/recommended-game.model";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {GamesTypeCardModel} from "./interface/gamesTypeCard-model";
 import {Observable} from "rxjs";
+import {GamingNewsCardModel} from "./interface/gaming-news-card.model";
 
 @Injectable()
 
@@ -46,8 +46,16 @@ export class GamesDataService {
     return this.http.get<GameModel[]>(environment.fireBaseUrl + 'freeGamesData.json');
   }
 
+  getNewGamingNews(): Observable<GamingNewsCardModel[]> {
+    return this.http.get<GamingNewsCardModel[]>(environment.fireBaseUrl + 'newGamingNewsCards.json');
+  }
+
+  getRandomwUser() {
+    return this.http.get('https://randomuser.me/api/');
+  }
+
   // fetchData() {
-  //   return this.http.put(environment.fireBaseUrl + 'gamesTypesCard.json', this.gameTypeCarouselData);
+  //   return this.http.put(environment.fireBaseUrl + 'newGamingNewsCards.json', this.newGamingNewsCards);
   // }
 
   selectAllRandomGames(numberGames: number, gamesData: GameModel[]): GameModel[] {

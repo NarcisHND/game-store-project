@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {GameModel} from "../../services/interface/game.model";
-import {FreeGameModel} from "../../services/interface/free-game.model";
 
 @Component({
   selector: 'app-game-card',
@@ -14,12 +13,12 @@ export class GameCardComponent implements OnInit {
   @Input() public cardStyle!: {};
   @Input() public cardType!: string;
   @Input() public placeholderCard: boolean = false;
-  public cardData: any;
+  public cardData!: GameModel;
 
   constructor() {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     if (this.cardType === 'freeGames') {
       this.cardData = this.freeGames;
     } else if (this.cardType === 'carouselCard') {
