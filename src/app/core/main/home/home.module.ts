@@ -23,6 +23,18 @@ import {
 } from './home-page/browse-page/browse-home-page/type-games-page/type-games-page.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {NewsPageComponent} from './home-page/news-page/news-page.component';
+import {GamingNewsMainCardComponent} from './home-page/news-page/gaming-news-main-card/gaming-news-main-card.component';
+import {
+  GamingNewsSecondaryCardComponent
+} from './home-page/news-page/gaming-news-secondary-card/gaming-news-secondary-card.component';
+import {
+  BrowserPagePlaceholderComponent
+} from "./home-page/browse-page/browse-home-page/browser-page-placeholder/browser-page-placeholder.component";
+import {
+  GamePagePlaceholderComponent
+} from "./home-page/game-page/game-page-placeholder/game-page-placeholder.component";
+import { NewsPagePlaceholderComponent } from './home-page/news-page/news-page-placeholder/news-page-placeholder.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +50,13 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
     ViewGamesComponent,
     GamesFilterComponent,
     BrowseHomePageComponent,
+    BrowserPagePlaceholderComponent,
     TypeGamesPageComponent,
+    NewsPageComponent,
+    GamingNewsMainCardComponent,
+    GamingNewsSecondaryCardComponent,
+    GamePagePlaceholderComponent,
+    NewsPagePlaceholderComponent
   ],
   imports: [
     CommonModule,

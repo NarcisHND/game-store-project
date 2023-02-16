@@ -5,13 +5,13 @@
     <div class="add_icon_container">
       <mat-icon class="add_icon">add</mat-icon>
     </div>
-    <img src="{{cardData?.image}}" alt="{{cardData?.name}}">
+    <img src="{{cardData.image}}" alt="{{cardData.name}}">
   </div>
   <div class="card-body">
     <div class="container_title">
-      <h5 class="card-title">{{cardData?.name}}</h5>
+      <h5 class="card-title">{{cardData.name}}</h5>
     </div>
-    <p class="card-text">RON {{cardData?.price}}</p>
+    <p class="card-text">RON {{cardData.price}}</p>
   </div>
 </div>
 
@@ -29,7 +29,7 @@
     <div class="add_icon_container">
       <mat-icon class="add_icon">add</mat-icon>
     </div>
-    <img src="{{cardData?.image}}" alt="{{cardData?.name}}">
+    <img src="{{cardData.image}}" alt="{{cardData.name}}">
   </div>
   <div class="card-body">
     <div class="container_title">
@@ -50,16 +50,16 @@
 <div class="card game_card_component freeGameCard add_Fade_effects"
      [ngStyle]="cardStyle" *ngIf="cardType === 'freeGames' && !placeholderCard">
   <div class="container_img">
-    <img src="{{cardData?.image}}" alt="{{cardData?.name}}">
+    <img src="{{cardData.image}}" alt="{{cardData.name}}">
     <div class="date_release_container" [ngClass]="cardData.validity === 'Free Now' ? 'freeNow' : 'comingSoon'">
-      <h3 class="date_release">{{cardData?.validity}}</h3>
+      <h3 class="date_release">{{cardData.validity}}</h3>
     </div>
   </div>
   <div class="card-body">
     <div class="container_title">
-      <h5 class="card-title">{{cardData?.name}}</h5>
+      <h5 class="card-title">{{cardData.name}}</h5>
     </div>
-    <p class="card-text">{{cardData?.date}}</p>
+    <p class="card-text">{{cardData.date}}</p>
   </div>
 </div>
 

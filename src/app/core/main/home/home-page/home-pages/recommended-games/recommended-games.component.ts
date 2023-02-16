@@ -17,11 +17,10 @@ export class RecommendedGamesComponent implements OnInit, OnDestroy {
   public loading: boolean = false;
   private subscription!: Subscription;
 
-
   constructor(private gamesDataService: GamesDataService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.loadData();
   }
 
@@ -39,7 +38,7 @@ export class RecommendedGamesComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }

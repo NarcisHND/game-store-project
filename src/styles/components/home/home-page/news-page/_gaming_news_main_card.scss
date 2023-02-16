@@ -1,0 +1,52 @@
+.gaming_news_main_card {
+  //padding: 1rem;
+
+  .card_img_container {
+    width: 100%;
+
+    .card_img {
+      width: 100%;
+      border-radius: 8px;
+      opacity: 0.9;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        filter: brightness(115%);
+      }
+    }
+  }
+
+  .card_date {
+    margin-top: 1rem;
+    color: $light-color-4;
+    text-transform: uppercase;
+    font-size: $font-size-5;
+  }
+
+  .card_title {
+    color: $light-color-2;
+    font-size: $font-size-3;
+    cursor: pointer;
+    width: max-content;
+  }
+
+  .card_description {
+    color: $light-color-4;
+    font-size: $font-size-4;
+  }
+
+  .read_more_btn {
+    margin-top: 1.5rem;
+    color: $light-color-2;
+    font-size: $font-size-3;
+    border-bottom: 1px solid $light-color-5;
+    cursor: pointer;
+    width: max-content;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: $light-color-2;
+    }
+  }
+}

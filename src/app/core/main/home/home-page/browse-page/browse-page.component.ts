@@ -10,6 +10,6 @@ export class BrowsePageComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 }

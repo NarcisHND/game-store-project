@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PlaceholderGamePageComponent } from './placeholder-game-page.component';
+import {PlaceholderGamePageComponent} from './game-page-placeholder.component';
 
 describe('PlaceholderGamePageComponent', () => {
   let component: PlaceholderGamePageComponent;
@@ -8,9 +8,9 @@ describe('PlaceholderGamePageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlaceholderGamePageComponent ]
+      declarations: [PlaceholderGamePageComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(PlaceholderGamePageComponent);
     component = fixture.componentInstance;

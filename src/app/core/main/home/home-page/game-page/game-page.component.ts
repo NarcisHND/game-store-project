@@ -17,7 +17,7 @@ export class GamePageComponent implements OnInit, OnDestroy {
   constructor(private route: ActivatedRoute, private gamesService: GamesDataService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     window.scrollTo(0, 0)
     this.loadData();
   }
@@ -26,14 +26,14 @@ export class GamePageComponent implements OnInit, OnDestroy {
     this.loading = true;
     this.subscription = this.route.paramMap.subscribe({
         next: params => {
-          const gameId = Number(params.get('id')) - 1;
-          const section = String(params.get('section'));
+          const gameId: number = Number(params.get('id')) - 1;
+          const section: string = String(params.get('section'));
           if (section === 'gamesData') {
             this.subscription = this.loadGameFromGamesData(gameId).subscribe({
               next: (res) => {
                 this.gameData = res;
                 this.loading = false;
-              }, error: err => {
+              }, error: (err) => {
                 console.error(err);
               }
             });
@@ -42,7 +42,7 @@ export class GamePageComponent implements OnInit, OnDestroy {
               next: (res) => {
                 this.gameData = res;
                 this.loading = false;
-              }, error: err => {
+              }, error: (err) => {
                 console.error(err)
               }
             });
@@ -52,12 +52,12 @@ export class GamePageComponent implements OnInit, OnDestroy {
                 this.gameData = res;
                 this.loading = false;
               },
-              error: err => {
+              error: (err) => {
                 console.error(err)
               }
             });
           }
-        }, error: err => {
+        }, error: (err) => {
           console.error(err);
         }
       },
@@ -72,7 +72,7 @@ export class GamePageComponent implements OnInit, OnDestroy {
     return this.gamesService.getGameFromFreeGamesData(id);
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
