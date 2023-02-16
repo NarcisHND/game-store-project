@@ -1,0 +1,80 @@
+.news_page_section_placeholder {
+  .section_title_placeholder {
+    height: 4rem;
+    width: 25rem;
+  }
+
+  .gaming_news_main_card_row_placeholder {
+    .gaming_news_main_card_placeholder {
+      .card_img_container_placeholder {
+        width: 100%;
+        height: 35rem;
+      }
+
+      .card_date_placeholder {
+        margin-top: 0.5rem;
+        height: 2rem;
+        width: 10rem;
+      }
+
+      .card_title_placeholder {
+        width: 30rem;
+        height: 2rem;
+      }
+
+      .card_description_placeholder {
+        width: 40rem;
+        height: 2rem;
+      }
+
+      .read_more_btn_placeholder {
+        height: 2rem;
+        width: 10rem;
+      }
+    }
+  }
+
+  .gaming_news_secondary_card_row_placeholder {
+    .gaming_news_secondary_card_placeholder {
+      margin-top: 2rem;
+
+      .card_img_container_placeholder {
+        width: 100%;
+        height: 20rem;
+      }
+
+      .card_info_placeholder {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .info_placeholder {
+
+          .card_date_placeholder {
+            height: 2rem;
+            width: 10rem;
+          }
+
+          .card_title_placeholder {
+            width: 30rem;
+            height: 2rem;
+          }
+
+          .card_description_placeholder {
+            width: 40rem;
+            height: 2rem;
+          }
+        }
+
+        .read_more_btn_placeholder {
+          height: 2rem;
+          width: 10rem;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+
