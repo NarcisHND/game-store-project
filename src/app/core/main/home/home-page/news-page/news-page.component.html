@@ -1,5 +1,5 @@
 <section class="news_page_section">
-  <div class="container">
+  <div class="container" *ngIf="!loading">
     <h1 class="section_title">Game Store News</h1>
     <div class="row gaming_news_main_card_row">
       <div class="col-6" *ngFor="let newsCard of gamingNewsMainCards">
@@ -46,4 +46,8 @@
       </div>
     </div>
   </div>
+  <div class="container">
+    <app-news-page-placeholder *ngIf="loading"></app-news-page-placeholder>
+  </div>
 </section>
+
