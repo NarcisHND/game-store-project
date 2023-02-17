@@ -10,13 +10,11 @@ export class GameCardComponent implements OnInit {
   @Input() public allGames!: GameModel;
   @Input() public freeGames!: GameModel;
   @Input() public landScapeGames!: GameModel;
-  @Input() public cardStyle!: {};
+  @Input() public cardStyle!: object;
   @Input() public cardType!: string;
-  @Input() public placeholderCard: boolean = false;
+  @Input() public placeholderCard = false;
   public cardData!: GameModel;
 
-  constructor() {
-  }
 
   ngOnInit() {
     if (this.cardType === 'freeGames') {

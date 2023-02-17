@@ -6,10 +6,10 @@ import {AfterViewInit, Directive, ElementRef, HostListener, OnDestroy, Renderer2
 })
 export class RecGamesCarouselDirective implements AfterViewInit, OnDestroy {
   private htmlElCarousel!: NodeList;
-  private carouselFunction!: Function;
+  private carouselFunction!: unknown;
   private htmlElGameCards!: NodeList;
   private createCarouselInterval!: number;
-  private carouselActivation: boolean = true;
+  private carouselActivation = true;
 
   constructor(private elRef: ElementRef, private renderer: Renderer2) {
   }
@@ -22,16 +22,17 @@ export class RecGamesCarouselDirective implements AfterViewInit, OnDestroy {
     this.renderer.addClass(this.htmlElGameCards[0], 'active_card');
 
     this.carouselFunction = (): void => {
-      let activeIndex: number = 0;
-      this.htmlElCarousel.forEach((el: any, index: number) => {
-        if (el.id === 'stopCarousel') {
+      let activeIndex = 0;
+      this.htmlElCarousel.forEach((el: Node, index: number) => {
+        const convToHtmlEl = el as HTMLElement;
+        if (convToHtmlEl.id === 'stopCarousel') {
           this.carouselActivation = false;
 
         } else {
           this.carouselActivation = true;
 
-          if (el.className.includes('active')) {
-            this.renderer.removeClass(el, 'active');
+          if (convToHtmlEl.className.includes('active')) {
+            this.renderer.removeClass(convToHtmlEl, 'active');
             this.renderer.removeClass(this.htmlElGameCards[index], 'active_card');
             activeIndex = index;
           }
@@ -51,18 +52,22 @@ export class RecGamesCarouselDirective implements AfterViewInit, OnDestroy {
   @HostListener('click')
   nextFunc(): void {
     this.stopCarousel();
-    let gameCard: HTMLObjectElement;
-    this.htmlElGameCards.forEach((el: any) => {
-      if (el.id === 'selectGame') {
-        gameCard = el.firstChild.firstChild.src;
+    let gameCard: string;
+    this.htmlElGameCards.forEach((el: Node) => {
+      const convToHtmlEl = el as HTMLElement;
+      if (convToHtmlEl.id === 'selectGame') {
+        const convToHtmlImg = convToHtmlEl?.firstChild?.firstChild as HTMLImageElement;
+        gameCard = convToHtmlImg.src;
       }
     });
-    this.htmlElCarousel.forEach((el: any, index: number) => {
-      if (el.className.includes('active')) {
+    this.htmlElCarousel.forEach((el: Node, index: number) => {
+      const convToHtmlEl = el as HTMLElement;
+      if (convToHtmlEl.className.includes('active')) {
         this.renderer.removeClass(el, 'active');
         this.renderer.removeClass(this.htmlElGameCards[index], 'active_card');
       }
-      const gameImageName = el.firstChild.src;
+      const convToHtmlImg = convToHtmlEl?.firstChild as HTMLImageElement;
+      const gameImageName = convToHtmlImg.src;
       if (gameCard === gameImageName) {
         this.renderer.addClass(el, 'active');
         this.renderer.setAttribute(this.htmlElGameCards[index], 'id', 'selectGame');
@@ -77,7 +82,8 @@ export class RecGamesCarouselDirective implements AfterViewInit, OnDestroy {
   }
 
   startCarousel(): void {
-    this.createCarouselInterval = setInterval(this.carouselFunction, 2000);
+    const convToNumber = this.carouselFunction as TimerHandler;
+    this.createCarouselInterval = setInterval(convToNumber, 2000);
   }
 
   ngOnDestroy() {

@@ -9,9 +9,9 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./card-carousel.component.scss']
 })
 export class CardCarouselComponent {
-  @Input() sectionTitle: string = 'Section Title';
+  @Input() sectionTitle = 'Section Title';
   @Input() cardData!: GameModel[];
-  @Input() loadingCarouselGames: boolean = true;
+  @Input() loadingCarouselGames = true;
 
   constructor(private gamesService: GamesDataService, private router: Router, private route: ActivatedRoute) {
   }

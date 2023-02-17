@@ -6,5 +6,5 @@ import {Component} from '@angular/core';
   styleUrls: ['./browser-page-placeholder.component.scss']
 })
 export class BrowserPagePlaceholderComponent {
-  public placeholders: {}[] = [{}, {}, {}, {}, {}, {}, {}, {}];
+  public placeholders: object[] = [{}, {}, {}, {}, {}, {}, {}, {}];
 }

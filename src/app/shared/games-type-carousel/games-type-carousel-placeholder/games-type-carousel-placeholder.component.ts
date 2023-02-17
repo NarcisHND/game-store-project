@@ -6,7 +6,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./games-type-carousel-placeholder.component.scss']
 })
 export class GamesTypeCarouselPlaceholderComponent implements OnInit {
-  public placeholderCards!: {}[];
+  public placeholderCards!: object[];
 
   ngOnInit(): void {
     this.placeholderCards = [{}, {}, {}, {}];

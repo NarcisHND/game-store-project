@@ -20,9 +20,6 @@ export class GamesFilterComponent implements OnInit, OnDestroy {
   @Output() public filteredGamesEvent: EventEmitter<GameModel[]> = new EventEmitter<GameModel[]>();
   public filtersNumber!: number;
 
-  constructor() {
-  }
-
   ngOnInit(): void {
     this.loadData()
   }
@@ -46,7 +43,7 @@ export class GamesFilterComponent implements OnInit, OnDestroy {
   _filter(value: string): string[] {
     const filterValue = this._normalizeValue(value);
     let gData: GameModel[];
-    let gamesData = this.gamesName.filter(game => this._normalizeValue(game).includes(filterValue));
+    const gamesData = this.gamesName.filter(game => this._normalizeValue(game).includes(filterValue));
 
     if (this.filteredGames.length > 0) {
       gData = this.filteredGames;
@@ -54,7 +51,7 @@ export class GamesFilterComponent implements OnInit, OnDestroy {
       gData = this.gamesData;
     }
 
-    let data = gData.filter(game => this._normalizeValue(game.name).includes(filterValue));
+    const data = gData.filter(game => this._normalizeValue(game.name).includes(filterValue));
     this.filteredGamesEvent.emit(data);
     return gamesData;
   }
@@ -64,7 +61,7 @@ export class GamesFilterComponent implements OnInit, OnDestroy {
   }
 
   filterByPrice(price: string | number): void {
-    let games: GameModel[] = this.gamesData;
+    const games: GameModel[] = this.gamesData;
     let filterResults: GameModel[];
     this.priceTypeFilter = price;
 
@@ -100,7 +97,7 @@ export class GamesFilterComponent implements OnInit, OnDestroy {
 
   filterByPlatform(type: string): void {
     let filterResults: GameModel[] = [];
-    let games: GameModel[] = this.gamesData;
+    const games: GameModel[] = this.gamesData;
     this.platformTypeFilter = type;
 
     if (this.priceTypeFilter) {

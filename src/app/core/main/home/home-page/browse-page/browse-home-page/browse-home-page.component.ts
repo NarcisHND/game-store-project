@@ -14,9 +14,9 @@ export class BrowseHomePageComponent implements OnInit, OnDestroy {
   public gamesData!: GameModel[];
   public filteredData!: GameModel[];
   private subscription!: Subscription;
-  public loadingCards: boolean = false;
-  public loadingGames: boolean = false;
-  public message: boolean = false;
+  public loadingCards = false;
+  public loadingGames = false;
+  public message = false;
 
   constructor(private gamesDataService: GamesDataService, private cd: ChangeDetectorRef) {
   }
@@ -47,7 +47,7 @@ export class BrowseHomePageComponent implements OnInit, OnDestroy {
       next: (res) => {
         this.subscription = this.gamesDataService.getFreeGames().subscribe({
           next: (freeGames) => {
-            let selectFreeGames = freeGames.filter(game => game.price === 'free');
+            const selectFreeGames = freeGames.filter(game => game.price === 'free');
             this.gamesData = res.concat(selectFreeGames);
             this.loadingGames = false;
           },

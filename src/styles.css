@@ -3,15 +3,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap");
+
 .navbar {
   padding: 0 0 0 2rem;
   background-color: #393E46;
   z-index: 1001;
   font-family: "Roboto Flex", sans-serif;
 }
+
 .navbar .navbar-collapse {
   align-items: initial;
 }
+
 .navbar-brand {
   font-size: 2rem;
   font-family: "Permanent Marker", cursive;
@@ -19,9 +22,11 @@
   color: #EEEEEE;
   cursor: pointer;
 }
+
 .navbar-brand:hover {
   color: #7BC74D;
 }
+
 .navbar_leftMenu .nav-item {
   padding-right: 0.5rem;
   font-size: 1.3rem;
@@ -29,28 +34,34 @@
   transition: 0.6s;
   cursor: pointer;
 }
+
 .navbar_leftMenu .nav-item .nav-item:not(:first-child) {
   padding-left: 0.5rem;
 }
+
 .navbar_leftMenu .nav-item > .nav-link:hover {
   border-bottom: 4px solid #7BC74D;
 }
+
 .navbar_leftMenu .nav-item .nav-link {
   display: flex;
   align-items: center;
   height: 100%;
 }
+
 .navbar_rightMenu {
   height: 100%;
   display: flex;
   align-items: center;
 }
+
 .navbar_rightMenu .nav-item {
   padding-right: 0.3rem;
   padding-left: 0.3rem;
   font-size: 1.3rem;
   cursor: pointer;
 }
+
 .navbar_rightMenu .login_btn {
   display: flex;
   align-items: center;
@@ -63,10 +74,12 @@
   cursor: pointer;
   transition: all 0.3s;
 }
+
 .navbar_rightMenu .login_btn--icon {
   font-size: 2.5rem;
   color: #EEEEEE;
 }
+
 .navbar_rightMenu .login_btn--text {
   position: absolute;
   color: #EEEEEE;
@@ -79,17 +92,21 @@
   transition-duration: 0.3s;
   transition-timing-function: cubic-bezier(0, 0, 1, -0.01);
 }
+
 .navbar_rightMenu .login_btn:hover {
   background: linear-gradient(100deg, rgb(43, 152, 0) 19%, rgb(98, 180, 36) 71%);
   width: 18rem;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
+
 .navbar_rightMenu .login_btn:hover .login_btn--text {
   opacity: 1;
 }
+
 .navbar_rightMenu .icon_rightMenu {
   font-size: 2rem;
 }
+
 .navbar_rightMenu > .nav-item:not(:last-child) > .nav-link:hover {
   color: #7BC74D !important;
 }
@@ -99,6 +116,7 @@
     padding-top: 5px;
     padding-bottom: 5px;
   }
+
   .navbar_leftMenu {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
@@ -106,10 +124,12 @@
     justify-content: center;
     align-items: center;
   }
+
   .navbar_leftMenu .nav-item > .nav-link:hover {
     color: #7BC74D;
     border: none;
   }
+
   .navbar_rightMenu {
     padding-left: 0.5rem;
     display: flex;
@@ -117,6 +137,7 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
   .navbar .login_btn {
     clip-path: polygon(0 1%, 100% 0, 100% 100%, 0% 100%);
     padding-right: 0.8rem;
@@ -125,18 +146,22 @@
     background: none;
     justify-content: center;
   }
+
   .navbar .login_btn--icon {
     font-size: 2.5rem;
     color: rgba(255, 255, 255, 0.55);
   }
+
   .navbar .login_btn:hover {
     background: none;
     width: initial;
   }
+
   .navbar .login_btn:hover .login_btn--icon {
     color: #7BC74D !important;
   }
 }
+
 .second_navbar_component {
   position: sticky;
   top: -1px;
@@ -144,29 +169,36 @@
   background-color: #222831;
   font-family: "Roboto Flex", sans-serif;
 }
+
 .second_navbar_component .nav_bar {
   padding: 0;
 }
+
 .second_navbar_component .nav_bar .container_list {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+
 .second_navbar_component .nav_bar .container_list > li:not(:first-child) {
   margin-right: 1.5rem;
   margin-left: 1.5rem;
 }
+
 .second_navbar_component .nav_bar .container_list .nav-item {
   list-style-type: none;
   cursor: pointer;
   font-size: 1.8rem;
 }
+
 .second_navbar_component .nav_bar .container_list .nav-item:hover .nav-link {
   color: #7BC74D !important;
 }
+
 .second_navbar_component .nav_bar .container_list .nav-item .search_box {
   display: flex;
   height: 4rem;
 }
+
 .second_navbar_component .nav_bar .container_list .nav-item .search_box-input {
   outline: none;
   border: none;
@@ -178,9 +210,11 @@
   width: 24rem;
   padding: 0 0.6rem;
 }
+
 .second_navbar_component .nav_bar .container_list .nav-item .search_box-input::placeholder {
   color: #858d9a;
 }
+
 .second_navbar_component .nav_bar .container_list .nav-item .search_box-btn {
   cursor: pointer;
   display: flex;
@@ -192,6 +226,7 @@
   color: #858d9a;
   width: 4rem;
 }
+
 .second_navbar_component .nav_bar .container_list .nav-link {
   text-decoration: none;
   color: #EEEEEE;
@@ -204,10 +239,12 @@
     align-items: center;
     flex-direction: column-reverse;
   }
+
   .second_navbar_component .container_list .nav-item {
     margin-top: 1rem;
   }
 }
+
 .footer_component {
   margin-top: 4rem;
   background-color: #393E46;
@@ -217,37 +254,46 @@
   padding-left: 6rem;
   font-family: "Roboto Flex", sans-serif;
 }
+
 .footer_component .footer_icons_container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .footer_component .footer_icons_container i {
   font-size: 3rem;
   color: #EEEEEE;
   transition: 0.3s;
   cursor: pointer;
 }
+
 .footer_component .footer_icons_container i:not(:last-child) {
   margin-right: 1.5rem;
 }
+
 .footer_component .footer_icons_container i:hover {
   color: #7BC74D;
 }
+
 .footer_component .footer_resources_container {
   margin-top: 2rem;
 }
+
 .footer_component .footer_resources_container .footer_resources_title {
   color: #7BC74D;
   font-size: 1.8rem;
 }
+
 .footer_component .footer_resources_container .footer_resources {
   display: flex;
 }
+
 .footer_component .footer_resources_container .footer_resources .footer_resources_list {
   margin-right: 3rem;
   padding: 0;
 }
+
 .footer_component .footer_resources_container .footer_resources .footer_resources_list .footer_resources_item {
   color: #EEEEEE;
   text-decoration: none;
@@ -256,45 +302,56 @@
   cursor: pointer;
   font-size: 1.5rem;
 }
+
 .footer_component .footer_resources_container .footer_resources .footer_resources_list .footer_resources_item:hover {
   color: #7BC74D;
 }
+
 .footer_component hr {
   color: #EEEEEE;
 }
+
 .footer_component .footer_info {
   color: #EEEEEE;
   font-size: 1.3rem;
 }
+
 .footer_component .footer_info_menu {
   margin-top: 4rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .footer_component .footer_info_menu .footer_menu {
   display: flex;
   flex-direction: row;
 }
+
 .footer_component .footer_info_menu .footer_menu .footer_menu_item {
   color: #EEEEEE;
   margin-right: 1.5rem;
   cursor: pointer;
   font-size: 1.5rem;
 }
+
 .footer_component .footer_info_menu .footer_menu .footer_menu_item:hover {
   color: #7BC74D;
 }
+
 .footer_component .footer_info_menu .footer_logo {
   color: #EEEEEE;
 }
+
 .footer_component .footer_info_menu .footer_logo i {
   margin-right: 1.5rem;
   font-size: 3rem;
 }
+
 .footer_component .footer_info_menu .footer_logo i:first-child {
   color: orangered;
 }
+
 .footer_component .footer_info_menu .footer_logo i:last-child {
   color: #7BC74D;
 }
@@ -302,12 +359,14 @@
 .free_games_component {
   margin-top: 4rem;
 }
+
 .free_games_component .free_games_container {
   display: grid;
   grid-auto-flow: row;
   padding: 3rem;
   background-color: #393E46;
 }
+
 .free_games_component .free_games_container .free_games_header {
   display: flex;
   flex-direction: row;
@@ -316,6 +375,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .free_games_component .free_games_container .free_games_header .free_games_section_title {
   display: flex;
   flex-direction: row;
@@ -325,6 +385,7 @@
   color: #EEEEEE;
   cursor: pointer;
 }
+
 .free_games_component .free_games_container .free_games_header .free_games_section_title .free_games_icon_container {
   height: 4rem;
   margin-right: 1rem;
@@ -333,24 +394,29 @@
   justify-content: center;
   align-items: center;
 }
+
 .free_games_component .free_games_container .free_games_header .free_games_section_title .free_games_icon_container .free_games_icon {
   font-size: 2.5rem;
 }
+
 .free_games_component .free_games_container .free_games_header .free_games_section_title .free_games_title {
   margin-bottom: 0;
   margin-left: 0.5rem;
   font-size: 2.5rem;
 }
+
 .free_games_component .free_games_container .free_games_header .free_games_section_title:hover {
   color: #7BC74D;
   transform: translateY(-0.5rem);
 }
+
 .free_games_component .free_games_container .free_games_header button {
   height: 3.5rem;
   width: 13rem;
   font-size: 1.5rem;
   text-transform: uppercase;
 }
+
 .free_games_component .free_games_container .free_games_grid_section {
   display: grid;
   grid-template-rows: auto;
@@ -358,6 +424,7 @@
   grid-template-columns: repeat(4, 280px);
   gap: 2rem;
 }
+
 .free_games_component .free_games_card_col {
   margin-top: 2rem;
   display: flex;
@@ -369,20 +436,24 @@
   height: min-content;
   font-family: "Roboto Flex", sans-serif;
 }
+
 .recommended_games_component .rec_games_carousel_col {
   padding-left: 0;
 }
+
 .recommended_games_component .rec_games_carousel_col .carousel-item {
   height: 62rem;
   display: flex;
   justify-content: center;
   align-items: start;
 }
+
 .recommended_games_component .rec_games_carousel_col .carousel-item img {
   width: 100%;
   min-height: 100%;
   border-radius: 15px;
 }
+
 .recommended_games_component .rec_games_carousel_col .carousel-item .rec_games_description_container {
   position: absolute;
   left: 4rem;
@@ -393,26 +464,31 @@
   padding: 10px;
   animation: fadeIn 5s;
 }
+
 .recommended_games_component .rec_games_carousel_col .carousel-item .rec_games_description_container .rec_games_description_term {
   color: white;
   font-size: 1.5rem;
   text-transform: uppercase;
 }
+
 .recommended_games_component .rec_games_carousel_col .carousel-item .rec_games_description_container .rec_games_description_text {
   line-height: 1.5;
   color: white;
   font-size: 1.6rem;
   width: 35rem;
 }
+
 .recommended_games_component .rec_games_carousel_col .carousel-item .rec_games_description_container .rec_games_description_price {
   color: white;
   font-size: 1.6rem;
   margin: 0;
 }
+
 .recommended_games_component .rec_games_carousel_col .carousel-item .rec_games_description_container .rec_games_description_btn_container {
   display: flex;
   flex-direction: row;
 }
+
 .recommended_games_component .rec_games_carousel_col .carousel-item .rec_games_description_container .rec_games_description_btn_container button {
   font-size: 1.3rem;
   text-transform: uppercase;
@@ -423,9 +499,11 @@
   justify-content: center;
   align-items: center;
 }
+
 .recommended_games_component .rec_games_carousel_col .carousel-item .rec_games_description_container .rec_games_description_btn_container button mat-icon {
   margin-right: 0.5rem;
 }
+
 .recommended_games_component .rec_games_cards_col {
   padding-right: 0;
   padding-left: 5rem;
@@ -434,6 +512,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .recommended_games_component .rec_games_cards_col .rec_games_card_container {
   display: flex;
   flex-direction: row;
@@ -443,6 +522,7 @@
   border-radius: 10px;
   width: 100%;
 }
+
 .recommended_games_component .rec_games_cards_col .rec_games_card_container .rec_games_img_container {
   height: 8rem;
   width: 10rem;
@@ -451,11 +531,13 @@
   display: flex;
   justify-content: center;
 }
+
 .recommended_games_component .rec_games_cards_col .rec_games_card_container .rec_games_img_container img {
   height: 100%;
   border-radius: 10px;
   text-align: center;
 }
+
 .recommended_games_component .rec_games_cards_col .rec_games_card_container .rec_games_title {
   width: 100%;
   line-height: 1.5;
@@ -465,10 +547,12 @@
   margin-bottom: 0;
   font-family: inherit;
 }
+
 .recommended_games_component .rec_games_cards_col .rec_games_card_container:hover {
   background-color: #393E46;
   cursor: pointer;
 }
+
 .recommended_games_component .rec_games_cards_col .active_card {
   background-color: #393E46;
 }
@@ -477,68 +561,84 @@
   .recommended_games_component .rec_games_carousel_col {
     padding-right: 0 !important;
   }
+
   .recommended_games_component .rec_games_carousel_col .carousel-item {
     height: auto !important;
     align-items: center !important;
     flex-direction: column !important;
   }
+
   .recommended_games_component .rec_games_carousel_col .carousel-item .rec_games_description_container {
     position: relative !important;
     left: 0 !important;
     bottom: 0 !important;
     width: 100% !important;
   }
+
   .recommended_games_component .rec_games_carousel_col .carousel-item .rec_games_description_container .rec_games_description_btn_container {
     flex-direction: column !important;
   }
+
   .recommended_games_component .rec_games_carousel_col .carousel-item .rec_games_description_container .rec_games_description_btn_container button {
     width: 100% !important;
   }
+
   .recommended_games_component .rec_games_carousel_col .carousel-item .rec_games_description_container .rec_games_description_btn_container button:last-child {
     margin-top: 1rem !important;
   }
+
   .recommended_games_component .rec_games_carousel_col .carousel-item img {
     min-height: auto !important;
   }
+
   .recommended_games_component .rec_games_cards_col {
     margin-top: 1rem !important;
     padding-left: 0 !important;
   }
 }
+
 .top_games_component {
   margin-top: 4rem;
 }
+
 .top_games_component .row {
   height: 100%;
 }
+
 .top_games_component .row > div:not(:last-child) {
   border-right: 0.1rem solid rgba(57, 62, 70, 0.3);
 }
+
 .top_games_component .row > div {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+
 .top_games_component .row .title_container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
+
 .top_games_component .row .title_container .title {
   margin: 0;
   color: #EEEEEE;
   font-size: 2.5rem;
   font-family: "Roboto Flex", sans-serif;
 }
+
 .top_games_component .row .title_container button {
   height: 3.2rem;
   font-size: 1.2rem;
   width: 10rem;
   text-transform: uppercase;
 }
+
 .top_games_component .row .game_card_container .game_card:first-child {
   margin-top: 1rem;
 }
+
 .top_games_component .row .game_card_container .game_card {
   padding-left: 1.5rem;
   height: 10rem;
@@ -551,21 +651,25 @@
   justify-content: start;
   align-items: center;
 }
+
 .top_games_component .row .game_card_container .game_card:hover {
   background-color: #393E46;
 }
+
 .top_games_component .row .game_card_container .game_card .game_image_container {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .top_games_component .row .game_card_container .game_card .game_image_container .game_image {
   background-color: #7BC74D;
   height: 80%;
   width: 6.5rem;
   border-radius: 8px;
 }
+
 .top_games_component .row .game_card_container .game_card .game_description_container {
   margin-left: 1.8rem;
   display: flex;
@@ -573,24 +677,28 @@
   justify-content: center;
   align-items: start;
 }
+
 .top_games_component .row .game_card_container .game_card .game_description_container .game_title {
   margin: 0;
   font-size: 1.5rem;
   line-height: 25px;
   font-family: "Roboto Flex", sans-serif;
 }
+
 .top_games_component .row .game_card_container .game_card .game_description_container .game_validity {
   margin: 0;
   font-size: 1.5rem;
   line-height: 25px;
   font-family: "Roboto Flex", sans-serif;
 }
+
 .top_games_component .row .game_card_container .game_card .game_description_container .game_price {
   margin: 0;
   font-size: 1.3rem;
   line-height: 25px;
   font-family: "Roboto Flex", sans-serif;
 }
+
 .top_games_component .row .game_card_container .game_card .add_icon_container {
   position: absolute;
   top: 50%;
@@ -606,22 +714,27 @@
   align-items: center;
   transition: 0.3s all;
 }
+
 .top_games_component .row .game_card_container .game_card .add_icon_container .add_icon {
   color: #EEEEEE;
   font-size: 1.8rem;
   height: max-content;
   width: max-content;
 }
+
 .top_games_component .row .game_card_container .game_card .add_icon_container:hover {
   cursor: pointer;
   background-color: #EEEEEE;
 }
+
 .top_games_component .row .game_card_container .game_card .add_icon_container:hover .add_icon {
   color: #222831;
 }
+
 .top_games_component .free_now_class {
   color: #EEEEEE;
 }
+
 .top_games_component .comming_soon_class {
   color: #858d9a;
 }
@@ -630,11 +743,13 @@
   height: max-content;
   margin-top: 4rem;
 }
+
 .card_carousel_component .col-12 .section_title_container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .card_carousel_component .col-12 .section_title_container .section_title {
   font-size: 2rem;
   color: #EEEEEE;
@@ -643,14 +758,17 @@
   transition: 0.3s all;
   font-family: "Roboto Flex", sans-serif;
 }
+
 .card_carousel_component .col-12 .section_title_container .section_title:hover {
   color: #7BC74D;
   transform: translateY(-0.5rem);
 }
+
 .card_carousel_component .col-12 .section_title_container .button-area {
   display: flex;
   flex-direction: row;
 }
+
 .card_carousel_component .col-12 .section_title_container .button-area .prev {
   color: #EEEEEE;
   cursor: pointer;
@@ -661,6 +779,7 @@
   align-items: center;
   transition: 1s;
 }
+
 .card_carousel_component .col-12 .section_title_container .button-area .next {
   color: #EEEEEE;
   cursor: pointer;
@@ -669,15 +788,18 @@
   justify-content: center;
   align-items: center;
 }
+
 .card_carousel_component .product {
   position: relative;
 }
+
 .card_carousel_component .product .slider-wrap {
   position: relative;
   overflow: hidden;
   height: 450px;
   width: 100%;
 }
+
 .card_carousel_component .product .slider-wrap .slider-main {
   width: 100%;
   height: 100%;
@@ -696,12 +818,14 @@
     justify-content: center !important;
   }
 }
+
 .card {
   border: none;
   border-radius: 10px;
   background-color: transparent;
   cursor: pointer;
 }
+
 .card .container_img {
   width: 100%;
   height: 100%;
@@ -716,32 +840,38 @@
   text-align: center;
   opacity: 0.9;
 }
+
 .card .container_img:hover {
   filter: brightness(115%);
 }
+
 .card .container_img img {
   height: 100%;
   width: 100%;
   border-radius: 10px;
   backface-visibility: hidden;
 }
+
 .card-body {
   background-color: transparent;
   border-radius: 0 0 10px 10px;
   padding-left: 0;
   padding-right: 0;
 }
+
 .card-body .container_title {
   display: flex;
   align-items: center;
   height: 4rem;
 }
+
 .card-body .container_title .card-title {
   color: #EEEEEE;
   font-size: 1.5rem;
   margin: 0;
   font-family: "Roboto Flex", sans-serif;
 }
+
 .card-body .card_type {
   color: #858d9a;
   text-transform: uppercase;
@@ -758,9 +888,11 @@
 .freeGameCard .freeNow {
   background-color: #7BC74D;
 }
+
 .freeGameCard .comingSoon {
   background-color: #858d9a;
 }
+
 .freeGameCard .date_release_container {
   position: absolute;
   bottom: 0;
@@ -769,16 +901,19 @@
   justify-content: center;
   align-items: center;
 }
+
 .freeGameCard .date_release_container .date_release {
   color: #EEEEEE;
   margin: 0;
   font-weight: 500;
   font-family: "Roboto Flex", sans-serif;
 }
+
 .freeGameCard .card-body .card-title {
   font-size: 1.6rem;
   font-family: "Roboto Flex", sans-serif;
 }
+
 .freeGameCard .card-body .card-text {
   color: #858d9a;
   font-size: 1.6rem;
@@ -788,24 +923,29 @@
 .detailsGameCard .container_img {
   height: 300px;
 }
+
 .detailsGameCard .card-body {
   height: 100%;
 }
+
 .detailsGameCard .card-body .container_title {
   flex-direction: column;
   align-items: start;
   height: 100%;
 }
+
 .detailsGameCard .card-body .card-title {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   font-family: "Roboto Flex", sans-serif;
 }
+
 .detailsGameCard .card-body .card_description {
   color: #858d9a;
   font-size: 1.5rem;
   font-family: "Roboto Flex", sans-serif;
 }
+
 .detailsGameCard .card-body .card_price {
   margin-top: 2rem;
   color: #EEEEEE;
@@ -828,16 +968,19 @@
   align-items: center;
   transition: 0.3s all;
 }
+
 .hoverCard .add_icon_container .add_icon {
   color: #EEEEEE;
   font-size: 2rem;
   height: max-content;
   width: max-content;
 }
+
 .hoverCard .add_icon_container:hover {
   cursor: pointer;
   background-color: #EEEEEE;
 }
+
 .hoverCard .add_icon_container:hover .add_icon {
   color: #222831;
 }
@@ -848,6 +991,7 @@
     width: 260px !important;
   }
 }
+
 *,
 *::before, *::after {
   padding: 0;
@@ -886,6 +1030,7 @@ body {
     opacity: 1;
   }
 }
+
 @-moz-keyframes fadein {
   /* Firefox */
   from {
@@ -895,6 +1040,7 @@ body {
     opacity: 1;
   }
 }
+
 @-webkit-keyframes fadein {
   /* Safari and Chrome */
   from {
@@ -904,6 +1050,7 @@ body {
     opacity: 1;
   }
 }
+
 @-o-keyframes fadein {
   /* Opera */
   from {

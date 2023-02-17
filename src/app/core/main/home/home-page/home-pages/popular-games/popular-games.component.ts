@@ -11,7 +11,7 @@ import {Subscription} from "rxjs";
 export class PopularGamesComponent implements OnInit, OnDestroy {
   public carouselRandomGames: GameModel[] = [];
   private subscription!: Subscription;
-  public loading: boolean = false;
+  public loading = false;
 
   constructor(private gamesDataService: GamesDataService) {
   }
