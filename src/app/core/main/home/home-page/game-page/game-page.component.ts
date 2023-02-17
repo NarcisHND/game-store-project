@@ -10,7 +10,7 @@ import {Observable, Subscription} from "rxjs";
   styleUrls: ['./game-page.component.scss']
 })
 export class GamePageComponent implements OnInit, OnDestroy {
-  public loading: boolean = false;
+  public loading = false;
   public gameData!: GameModel;
   private subscription!: Subscription;
 
@@ -26,8 +26,8 @@ export class GamePageComponent implements OnInit, OnDestroy {
     this.loading = true;
     this.subscription = this.route.paramMap.subscribe({
         next: params => {
-          const gameId: number = Number(params.get('id')) - 1;
-          const section: string = String(params.get('section'));
+          const gameId = Number(params.get('id')) - 1;
+          const section = String(params.get('section'));
           if (section === 'gamesData') {
             this.subscription = this.loadGameFromGamesData(gameId).subscribe({
               next: (res) => {

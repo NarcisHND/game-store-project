@@ -17,8 +17,9 @@ export class BehaviorDropdownButtonDirective implements OnInit {
   setActive(): void {
     const dropdownMenu = this.elRef.nativeElement.parentElement.parentElement;
     const items: NodeList = dropdownMenu.querySelectorAll('.dropdown-item');
-    items.forEach((item: any) => {
-      if (item.className === 'dropdown-item active') {
+    items.forEach((item: Node) => {
+      const convToHtmlEl = item as HTMLElement;
+      if (convToHtmlEl.className === 'dropdown-item active') {
         this.renderer.removeClass(item, 'active')
       }
     });

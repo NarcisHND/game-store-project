@@ -5,7 +5,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 export class TitleUppercasePipe implements PipeTransform {
 
-  transform(value: string, ...args: unknown[]): unknown {
+  transform(value: string): unknown {
     let finalValue!: string;
     if (value.includes('-')) {
       const searchEL = value.indexOf('-');

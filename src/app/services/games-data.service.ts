@@ -50,41 +50,27 @@ export class GamesDataService {
     return this.http.get<GamingNewsCardModel[]>(environment.fireBaseUrl + 'newGamingNewsCards.json');
   }
 
-  getRandomwUser() {
-    return this.http.get('https://randomuser.me/api/');
-  }
-
   // fetchData() {
   //   return this.http.put(environment.fireBaseUrl + 'newGamingNewsCards.json', this.newGamingNewsCards);
   // }
 
-  selectAllRandomGames(numberGames: number, gamesData: GameModel[]): GameModel[] {
-    let gameData: GameModel[] = gamesData;
-    let randomNumber!: number;
-    let uniqueSet: GameModel[] = [];
-    let sortSet!: Set<GameModel>;
-    let games: GameModel[] = [];
-
-    return this.randomFunction(numberGames, randomNumber, gameData, games, sortSet, uniqueSet);
-  }
-
-  // selectFreeRandomGames(numberGames: number, gamesData: FreeGameModel[]): FreeGameModel[] {
-  //   let gameData: FreeGameModel[] = gamesData;
+  // selectAllRandomGames(numberGames: number, gamesData: GameModel[]): GameModel[] {
+  //   const gameData: GameModel[] = gamesData;
   //   let randomNumber!: number;
-  //   let uniqueSet: FreeGameModel[] = [];
-  //   let sortSet!: Set<FreeGameModel>;
-  //   let games: FreeGameModel[] = [];
+  //   const games: GameModel[] = [];
   //
-  //   return this.randomFunction(numberGames, randomNumber, gameData, games, sortSet, uniqueSet);
+  //   return this.randomFunction(numberGames, randomNumber, gameData, games);
   // }
 
-  randomFunction(numberGames: number, randomNumber: number, gameData: GameModel[], games: unknown[], sortSet: any, uniqueSet: any) {
+  selectAllRandomGames(numberGames: number, gameData: GameModel[]) {
+    let uniqueSet: GameModel[];
+    const games: GameModel[] = [];
     do {
-      randomNumber = Math.floor(Math.random() * gameData.length);
+      const randomNumber = Math.floor(Math.random() * gameData.length);
       if (gameData) {
         games.push(gameData[randomNumber]);
       }
-      sortSet = new Set(games);
+      const sortSet = new Set(games);
       uniqueSet = [...sortSet];
     } while (uniqueSet?.length < numberGames);
 

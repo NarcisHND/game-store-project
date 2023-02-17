@@ -6,6 +6,6 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./game-page-placeholder.component.scss']
 })
 export class GamePagePlaceholderComponent {
-  @Input() public loading: boolean = true;
+  @Input() public loading = true;
 
 }

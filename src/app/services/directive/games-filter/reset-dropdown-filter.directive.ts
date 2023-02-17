@@ -13,13 +13,13 @@ export class ResetDropdownFilterDirective {
     const priceDropDownEls = this.elRef.nativeElement.closest('body').querySelectorAll('.btn-check-price');
     const platformDropDownEls = this.elRef.nativeElement.closest('body').querySelectorAll('.btn-check-platform');
 
-    priceDropDownEls.forEach((el: any) => {
+    priceDropDownEls.forEach((el: HTMLInputElement) => {
       if (el.checked) {
         el.checked = false;
       }
     });
 
-    platformDropDownEls.forEach((el: any) => {
+    platformDropDownEls.forEach((el: HTMLInputElement) => {
       if (el.checked) {
         el.checked = false;
       }
@@ -31,7 +31,7 @@ export class ResetDropdownFilterDirective {
   resetOrder() {
     const dropdownOrderBtn = this.elRef.nativeElement.closest('body').querySelector('.filter_btn_dropdown');
     const dropdownOrderItems = this.elRef.nativeElement.closest('body').querySelectorAll('.dropdown-item');
-    dropdownOrderItems.forEach((el: any) => {
+    dropdownOrderItems.forEach((el: HTMLElement) => {
       if (el.className === 'dropdown-item active') {
         this.renderer.removeClass(el, 'active')
       }

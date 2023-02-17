@@ -13,9 +13,9 @@ export class TypeGamesPageComponent implements OnInit, OnDestroy {
   private subscription!: Subscription;
   public gamesType!: string | null;
   public gamesData!: GameModel[];
-  public loading: boolean = false;
+  public loading = false;
   public filteredData!: GameModel[];
-  public message: boolean = false;
+  public message = false;
 
 
   constructor(

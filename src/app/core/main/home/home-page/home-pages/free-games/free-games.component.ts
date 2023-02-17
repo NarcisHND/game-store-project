@@ -12,7 +12,7 @@ import {GameModel} from "../../../../../../services/interface/game.model";
 export class FreeGamesComponent implements OnInit, OnDestroy {
   public freeRandomGames!: GameModel[];
   private subscription!: Subscription;
-  public loading: boolean = false;
+  public loading = false;
 
   constructor(private gamesDataService: GamesDataService, private router: Router, private route: ActivatedRoute) {
   }

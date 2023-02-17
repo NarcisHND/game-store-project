@@ -14,7 +14,7 @@ import {Subscription} from "rxjs";
 })
 export class RecommendedGamesComponent implements OnInit, OnDestroy {
   public gamesData!: RecommendedGameModel[];
-  public loading: boolean = false;
+  public loading = false;
   private subscription!: Subscription;
 
   constructor(private gamesDataService: GamesDataService) {

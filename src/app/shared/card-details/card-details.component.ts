@@ -10,7 +10,7 @@ import {GamesDataService} from "../../services/games-data.service";
 })
 export class CardDetailsComponent {
   @Input() cardData!: GameModel[];
-  @Input() loadingLandscapeGames: boolean = false;
+  @Input() loadingLandscapeGames = false;
 
   constructor(private router: Router, private route: ActivatedRoute, private service: GamesDataService) {
   }

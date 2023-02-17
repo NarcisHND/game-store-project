@@ -12,7 +12,7 @@ export class ViewGamesComponent implements OnInit, OnDestroy {
   private subscription!: Subscription;
   @Input() public allGames!: GameModel[];
   public backupGames!: GameModel[];
-  private filterActivation: boolean = false;
+  private filterActivation = false;
   private orderData!: string;
   @Input() public gamesType!: string | null;
   @Input() public showMessage!: boolean;

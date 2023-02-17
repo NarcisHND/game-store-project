@@ -12,8 +12,8 @@ export class GamesOnSaleComponent implements OnInit, OnDestroy {
   public carouselRandomGames: GameModel[] = [];
   public landScapeRandomGames: GameModel[] = [];
   private subscription!: Subscription;
-  public loadingCarouselGames: boolean = false;
-  public loadingLandscapeGames: boolean = false;
+  public loadingCarouselGames = false;
+  public loadingLandscapeGames = false;
 
   constructor(private gamesDataService: GamesDataService) {
   }

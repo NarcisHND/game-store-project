@@ -10,9 +10,9 @@ export class NextDirective {
 
   @HostListener('click')
   nextFunc(): void {
-    let elm = this.el.nativeElement.parentElement.parentElement.parentElement.children[1];
-    let itemContainer = elm.getElementsByClassName('slider-main');
-    let item = elm.getElementsByClassName('item');
+    const elm = this.el.nativeElement.parentElement.parentElement.parentElement.children[1];
+    const itemContainer = elm.getElementsByClassName('slider-main');
+    const item = elm.getElementsByClassName('item');
     if (item.length > 4) {
       itemContainer[0].append(item[0]);
     }

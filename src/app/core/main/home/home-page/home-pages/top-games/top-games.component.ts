@@ -14,8 +14,8 @@ export class TopGamesComponent implements OnInit, OnDestroy {
   public mostPlayed!: GameModel[];
   public topUpcoming!: GameModel[];
   private subscription!: Subscription;
-  public firstLoading: boolean = false;
-  public secondLoading: boolean = false;
+  public firstLoading = false;
+  public secondLoading = false;
 
   constructor(private gameDataService: GamesDataService, private router: Router, private route: ActivatedRoute) {
   }
