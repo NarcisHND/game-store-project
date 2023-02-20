@@ -61,7 +61,7 @@
       display: grid;
       grid-template-rows: auto;
       justify-content: center;
-      grid-template-columns: repeat(4, 280px);
+      grid-template-columns: repeat(auto-fit, 280px);
       gap: 2rem;
     }
   }
@@ -71,5 +71,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .free_games_container {
+    padding: 2rem !important;
+
+    .free_games_header {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+
+    }
+
+    .free_games_section_title {
+      .free_games_title {
+
+        font-size: $font-size-2 !important;
+      }
+    }
   }
 }
