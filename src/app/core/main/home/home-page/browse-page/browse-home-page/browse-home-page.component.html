@@ -6,11 +6,42 @@
     <div class="col-9 game_cards_col" *ngIf="!loadingGames">
       <app-view-games
         [allGames]="filteredData"
-        [backupGames]="filteredData"
         [showMessage]="message"
-        [allPagesNumber]="allPagesNumber"
-        [page]="startPage"
+        (sendOrderType)="sortFunction($event)"
       ></app-view-games>
+
+      <div class="row pagination_row" *ngIf="!message">
+        <div class="col-12">
+          <nav aria-label="Page navigation">
+            <ul class="pagination pagination-lg">
+              <li class="page-item" [ngClass]="{disabled: disablePrevious}">
+                <a class="page-link" aria-label="Previous" (click)="prevPage()">
+                  Previous
+                </a>
+              </li>
+              <li class="page-item"
+                  [ngClass]="{active: pageNumber === page}"
+                  *ngFor="let pageNumber of allPagesNumber; index as i">
+                <a class="page-link" (click)="selectPage(pageNumber)" *ngIf="i < 5">{{pageNumber}}</a>
+              </li>
+              <li class="page-item" *ngIf="allPagesNumber.length > 6">
+                <a class="page-link">...</a>
+              </li>
+              <li class="page-item" *ngIf="allPagesNumber.length > 6">
+                <a class="page-link"
+                   [ngClass]="{active: allPagesNumber.length === page}"
+                   (click)="selectPage(allPagesNumber.length)"
+                   *ngIf="allPagesNumber.length > 6">{{allPagesNumber.length}}</a>
+              </li>
+              <li class="page-item" [ngClass]="{disabled: disableNext}">
+                <a class="page-link" aria-label="Next" (click)="nextPage()">
+                  Next
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
 
     <div class="col-3 filter_col" *ngIf="!loadingGames">
