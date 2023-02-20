@@ -1,7 +1,7 @@
-import {AfterViewInit, Directive, ElementRef, HostListener, Renderer2} from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, HostListener, Renderer2} from "@angular/core";
 
 @Directive({
-  selector: '[appSelectGameHtmlElement]'
+  selector: "[appSelectGameHtmlElement]"
 })
 export class SelectGameHtmlElementDirective implements AfterViewInit {
   private htmlElCarousel!: NodeList;
@@ -11,15 +11,15 @@ export class SelectGameHtmlElementDirective implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.htmlElCarousel = this.elRef.nativeElement.querySelectorAll('.carousel-item');
-    this.htmlElGameCards = this.elRef.nativeElement.parentElement.querySelectorAll('.rec_games_card_container');
+    this.htmlElCarousel = this.elRef.nativeElement.querySelectorAll(".carousel-item");
+    this.htmlElGameCards = this.elRef.nativeElement.parentElement.querySelectorAll(".rec_games_card_container");
   }
 
-  @HostListener('click')
+  @HostListener("click")
   changeGameImage(): void {
     this.htmlElGameCards.forEach((el: Node) => {
-      this.renderer.removeAttribute(el, 'id');
-      this.renderer.setAttribute(this.elRef.nativeElement, 'id', 'selectGame');
+      this.renderer.removeAttribute(el, "id");
+      this.renderer.setAttribute(this.elRef.nativeElement, "id", "selectGame");
     })
   }
 }

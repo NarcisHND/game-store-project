@@ -2,15 +2,15 @@ import {
   Component,
   OnDestroy,
   OnInit
-} from '@angular/core';
+} from "@angular/core";
 import {GamesDataService} from "../../../../../../services/games-data.service";
 import {RecommendedGameModel} from "../../../../../../services/interface/recommended-game.model";
 import {Subscription} from "rxjs";
 
 @Component({
-  selector: 'app-recommended-games',
-  templateUrl: './recommended-games.component.html',
-  styleUrls: ['./recommended-games.component.scss']
+  selector: "app-recommended-games",
+  templateUrl: "./recommended-games.component.html",
+  styleUrls: ["./recommended-games.component.scss"]
 })
 export class RecommendedGamesComponent implements OnInit, OnDestroy {
   public gamesData!: RecommendedGameModel[];

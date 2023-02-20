@@ -14,8 +14,9 @@
   </div>
 
   <div class="row mt-4">
-    <div class="col-3" *ngFor="let game of allGames">
+    <div class="col-3" *ngFor="let game of allGames; let i = index">
       <app-game-card
+        *ngIf="i < 10"
         [allGames]="game"
         [cardType]="'carouselCard'"
         [cardStyle]="{width: '200px', height: '360px', margin: '0 0 4rem 0'}"
@@ -24,6 +25,38 @@
     </div>
   </div>
 
+  <div class="row pagination_row" *ngIf="!showMessage">
+    <div class="col-12">
+      <nav aria-label="Page navigation">
+        <ul class="pagination pagination-lg">
+          <li class="page-item" [ngClass]="{disabled: disablePrevious || allPagesNumber.length === 1}">
+            <a class="page-link" aria-label="Previous" (click)="prevPage()">
+              Previous
+            </a>
+          </li>
+          <li class="page-item"
+              [ngClass]="{active: pageNumber === page}"
+              *ngFor="let pageNumber of allPagesNumber; index as i">
+            <a class="page-link" (click)="selectPage(pageNumber)" *ngIf="i < 5">{{pageNumber}}</a>
+          </li>
+          <li class="page-item" *ngIf="allPagesNumber.length > 6">
+            <a class="page-link">...</a>
+          </li>
+          <li class="page-item" *ngIf="allPagesNumber.length > 6">
+            <a class="page-link"
+               [ngClass]="{active: allPagesNumber.length === page}"
+               (click)="selectPage(allPagesNumber.length)"
+               *ngIf="allPagesNumber.length > 6">{{allPagesNumber.length}}</a>
+          </li>
+          <li class="page-item" [ngClass]="{disabled: disableNext || allPagesNumber.length === 1}">
+            <a class="page-link" aria-label="Next" (click)="nextPage()">
+              Next
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
   <div class="no_game_message" *ngIf="showMessage">
     <h1 class="title_message">No results found</h1>
     <p class="message">Unfortunately I could not find any results matching your search.</p>

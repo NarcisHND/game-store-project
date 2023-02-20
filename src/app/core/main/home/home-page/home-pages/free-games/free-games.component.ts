@@ -1,13 +1,13 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from "@angular/core";
 import {GamesDataService} from "../../../../../../services/games-data.service";
 import {Subscription} from "rxjs";
 import {ActivatedRoute, Router} from "@angular/router";
 import {GameModel} from "../../../../../../services/interface/game.model";
 
 @Component({
-  selector: 'app-free-games',
-  templateUrl: './free-games.component.html',
-  styleUrls: ['./free-games.component.scss']
+  selector: "app-free-games",
+  templateUrl: "./free-games.component.html",
+  styleUrls: ["./free-games.component.scss"]
 })
 export class FreeGamesComponent implements OnInit, OnDestroy {
   public freeRandomGames!: GameModel[];
@@ -36,7 +36,7 @@ export class FreeGamesComponent implements OnInit, OnDestroy {
   }
 
   selectGame(game: GameModel): void {
-    this.router.navigate(['game', game.id, 'freeGamesData'], {
+    this.router.navigate(["game", game.id, "freeGamesData"], {
       relativeTo: this.route,
     })
   }

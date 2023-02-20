@@ -1,10 +1,10 @@
-import {Component, OnInit, Input, Output} from '@angular/core';
+import {Component, OnInit, Input, Output} from "@angular/core";
 import {Subject} from "rxjs";
 
 @Component({
-  selector: 'app-pagination',
-  templateUrl: './pagination.component.html',
-  styleUrls: ['./pagination.component.scss']
+  selector: "app-pagination",
+  templateUrl: "./pagination.component.html",
+  styleUrls: ["./pagination.component.scss"]
 })
 export class PaginationComponent implements OnInit {
   public allPagesNumber: number[] = [];
@@ -19,6 +19,7 @@ export class PaginationComponent implements OnInit {
   ngOnInit() {
     this.page = 1;
     this.getPagesNumber();
+    console.log(this.allItems);
   }
 
   getPagesNumber(): void {

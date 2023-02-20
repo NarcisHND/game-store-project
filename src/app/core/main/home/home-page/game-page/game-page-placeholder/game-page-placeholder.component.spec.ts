@@ -1,8 +1,8 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {ComponentFixture, TestBed} from "@angular/core/testing";
 
-import {PlaceholderGamePageComponent} from './game-page-placeholder.component';
+import {PlaceholderGamePageComponent} from "./game-page-placeholder.component";
 
-describe('PlaceholderGamePageComponent', () => {
+describe("PlaceholderGamePageComponent", () => {
   let component: PlaceholderGamePageComponent;
   let fixture: ComponentFixture<PlaceholderGamePageComponent>;
 
@@ -17,7 +17,7 @@ describe('PlaceholderGamePageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

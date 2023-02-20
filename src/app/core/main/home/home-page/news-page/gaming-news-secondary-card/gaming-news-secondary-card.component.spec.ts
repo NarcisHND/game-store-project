@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { GamingNewsSecondaryCardComponent } from './gaming-news-secondary-card.component';
+import { GamingNewsSecondaryCardComponent } from "./gaming-news-secondary-card.component";
 
-describe('GamingNewsSecondaryCardComponent', () => {
+describe("GamingNewsSecondaryCardComponent", () => {
   let component: GamingNewsSecondaryCardComponent;
   let fixture: ComponentFixture<GamingNewsSecondaryCardComponent>;
 
@@ -17,7 +17,7 @@ describe('GamingNewsSecondaryCardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
