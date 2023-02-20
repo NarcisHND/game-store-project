@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { BrowserPagePlaceholderComponent } from './browser-page-placeholder.component';
+import { BrowserPagePlaceholderComponent } from "./browser-page-placeholder.component";
 
-describe('BrowserPagePlaceholderComponent', () => {
+describe("BrowserPagePlaceholderComponent", () => {
   let component: BrowserPagePlaceholderComponent;
   let fixture: ComponentFixture<BrowserPagePlaceholderComponent>;
 
@@ -17,7 +17,7 @@ describe('BrowserPagePlaceholderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

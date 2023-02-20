@@ -1,13 +1,13 @@
-import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnDestroy, OnInit} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
 import {Subscription} from "rxjs";
 import {GamesDataService} from "../../../../../../../services/games-data.service";
 import {GameModel} from "../../../../../../../services/interface/game.model";
 
 @Component({
-  selector: 'app-type-games-page',
-  templateUrl: './type-games-page.component.html',
-  styleUrls: ['./type-games-page.component.scss']
+  selector: "app-type-games-page",
+  templateUrl: "./type-games-page.component.html",
+  styleUrls: ["./type-games-page.component.scss"]
 })
 export class TypeGamesPageComponent implements OnInit, OnDestroy {
   private subscription!: Subscription;
@@ -16,7 +16,6 @@ export class TypeGamesPageComponent implements OnInit, OnDestroy {
   public loading = false;
   public filteredData!: GameModel[];
   public message = false;
-
 
   constructor(
     private route: ActivatedRoute,
@@ -28,7 +27,7 @@ export class TypeGamesPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.loading = true;
     this.subscription = this.route.paramMap.subscribe((param) => {
-      this.gamesType = param.get('type');
+      this.gamesType = param.get("type");
       this.subscription = this.gamesDataService.getGames().subscribe({
         next: (res) => {
           this.gamesData = res.filter(game => game.type === this.gamesType);

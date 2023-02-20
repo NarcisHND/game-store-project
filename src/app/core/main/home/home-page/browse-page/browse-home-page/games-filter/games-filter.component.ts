@@ -1,17 +1,17 @@
-import {Component, OnDestroy, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnDestroy, OnInit, Input, Output, EventEmitter} from "@angular/core";
 import {map, Observable, startWith, Subscription} from "rxjs";
 import {GameModel} from "../../../../../../../services/interface/game.model";
 import {FormControl} from "@angular/forms";
 
 @Component({
-  selector: 'app-games-filter',
-  templateUrl: './games-filter.component.html',
-  styleUrls: ['./games-filter.component.scss']
+  selector: "app-games-filter",
+  templateUrl: "./games-filter.component.html",
+  styleUrls: ["./games-filter.component.scss"]
 })
 export class GamesFilterComponent implements OnInit, OnDestroy {
   private subscription!: Subscription;
   @Input() public gamesData!: GameModel[];
-  public control = new FormControl('');
+  public control = new FormControl("");
   public gamesName: string[] = [];
   public filterObs!: Observable<string[]>;
   private filteredGames: GameModel[] = [];
@@ -35,8 +35,8 @@ export class GamesFilterComponent implements OnInit, OnDestroy {
 
   filteredDataFunction(): void {
     this.filterObs = this.control.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value || '')),
+      startWith(""),
+      map(value => this._filter(value || "")),
     );
   }
 
@@ -57,7 +57,7 @@ export class GamesFilterComponent implements OnInit, OnDestroy {
   }
 
   _normalizeValue(value: string): string {
-    return value.toLowerCase().replace(/\s/g, '');
+    return value.toLowerCase().replace(/\s/g, "");
   }
 
   filterByPrice(price: string | number): void {
@@ -66,17 +66,17 @@ export class GamesFilterComponent implements OnInit, OnDestroy {
     this.priceTypeFilter = price;
 
     if (this.platformTypeFilter) {
-      if (price === 'free') {
+      if (price === "free") {
         filterResults = games.filter(game => game.price === price && game.platform === this.platformTypeFilter);
-      } else if (price === 'above') {
+      } else if (price === "above") {
         filterResults = games.filter(game => game.price >= 80 && game.platform === this.platformTypeFilter);
       } else {
         filterResults = games.filter(game => game.price <= price && game.platform === this.platformTypeFilter);
       }
     } else {
-      if (price === 'free') {
+      if (price === "free") {
         filterResults = games.filter(game => game.price === price);
-      } else if (price === 'above') {
+      } else if (price === "above") {
         filterResults = games.filter(game => game.price >= 80);
       } else {
         filterResults = games.filter(game => game.price <= price);
@@ -115,7 +115,7 @@ export class GamesFilterComponent implements OnInit, OnDestroy {
     this.filtersNumber = NaN;
     this.filteredGames = [];
     this.priceTypeFilter = NaN;
-    this.platformTypeFilter = '';
+    this.platformTypeFilter = "";
   }
 
   ngOnDestroy(): void {

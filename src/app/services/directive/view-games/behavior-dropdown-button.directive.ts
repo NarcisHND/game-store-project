@@ -1,7 +1,7 @@
-import {Directive, ElementRef, HostListener, OnInit, Renderer2} from '@angular/core';
+import {Directive, ElementRef, HostListener, OnInit, Renderer2} from "@angular/core";
 
 @Directive({
-  selector: '[appBehaviorDropdownButton]'
+  selector: "[appBehaviorDropdownButton]"
 })
 export class BehaviorDropdownButtonDirective implements OnInit {
 
@@ -9,21 +9,21 @@ export class BehaviorDropdownButtonDirective implements OnInit {
   }
 
   ngOnInit(): void {
-    const firstItem = this.elRef.nativeElement.parentElement.parentElement.querySelector('.dropdown-item');
-    this.renderer.addClass(firstItem, 'active');
+    const firstItem = this.elRef.nativeElement.parentElement.parentElement.querySelector(".dropdown-item");
+    this.renderer.addClass(firstItem, "active");
   }
 
-  @HostListener('click')
+  @HostListener("click")
   setActive(): void {
     const dropdownMenu = this.elRef.nativeElement.parentElement.parentElement;
-    const items: NodeList = dropdownMenu.querySelectorAll('.dropdown-item');
+    const items: NodeList = dropdownMenu.querySelectorAll(".dropdown-item");
     items.forEach((item: Node) => {
       const convToHtmlEl = item as HTMLElement;
-      if (convToHtmlEl.className === 'dropdown-item active') {
-        this.renderer.removeClass(item, 'active')
+      if (convToHtmlEl.className === "dropdown-item active") {
+        this.renderer.removeClass(item, "active")
       }
     });
-    this.renderer.addClass(this.elRef.nativeElement, 'active');
+    this.renderer.addClass(this.elRef.nativeElement, "active");
     const elementValue: string = this.elRef.nativeElement.innerHTML;
     this.elRef.nativeElement.parentElement.parentElement.parentElement.firstChild.innerHTML = `<strong>Show:</strong> ${elementValue}`;
   }

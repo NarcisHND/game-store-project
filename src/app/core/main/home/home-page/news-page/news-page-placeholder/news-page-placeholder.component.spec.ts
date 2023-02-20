@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { NewsPagePlaceholderComponent } from './news-page-placeholder.component';
+import { NewsPagePlaceholderComponent } from "./news-page-placeholder.component";
 
-describe('NewsPagePlaceholderComponent', () => {
+describe("NewsPagePlaceholderComponent", () => {
   let component: NewsPagePlaceholderComponent;
   let fixture: ComponentFixture<NewsPagePlaceholderComponent>;
 
@@ -17,7 +17,7 @@ describe('NewsPagePlaceholderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

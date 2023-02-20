@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { BrowseHomePageComponent } from './browse-home-page.component';
+import { BrowseHomePageComponent } from "./browse-home-page.component";
 
-describe('BrowseHomePageComponent', () => {
+describe("BrowseHomePageComponent", () => {
   let component: BrowseHomePageComponent;
   let fixture: ComponentFixture<BrowseHomePageComponent>;
 
@@ -17,7 +17,7 @@ describe('BrowseHomePageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

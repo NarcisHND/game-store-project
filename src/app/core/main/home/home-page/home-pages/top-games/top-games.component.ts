@@ -1,13 +1,13 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from "@angular/core";
 import {GamesDataService} from "../../../../../../services/games-data.service";
 import {GameModel} from "../../../../../../services/interface/game.model";
 import {Subscription} from "rxjs";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-top-games',
-  templateUrl: './top-games.component.html',
-  styleUrls: ['./top-games.component.scss']
+  selector: "app-top-games",
+  templateUrl: "./top-games.component.html",
+  styleUrls: ["./top-games.component.scss"]
 })
 export class TopGamesComponent implements OnInit, OnDestroy {
   public topSellers!: GameModel[];
@@ -50,13 +50,13 @@ export class TopGamesComponent implements OnInit, OnDestroy {
   }
 
   selectGameByGamesData(game: GameModel): void {
-    this.router.navigate(['game', game.id, 'gamesData'], {
+    this.router.navigate(["game", game.id, "gamesData"], {
       relativeTo: this.route,
     })
   }
 
   selectGameByFreeGamesData(game: GameModel): void {
-    this.router.navigate(['game', game.id, 'freeGamesData'], {
+    this.router.navigate(["game", game.id, "freeGamesData"], {
       relativeTo: this.route,
     })
   }

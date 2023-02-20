@@ -1,13 +1,13 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
 import {GamesDataService} from "../../../../../services/games-data.service";
 import {GameModel} from "../../../../../services/interface/game.model";
 import {Observable, Subscription} from "rxjs";
 
 @Component({
-  selector: 'app-game-page',
-  templateUrl: './game-page.component.html',
-  styleUrls: ['./game-page.component.scss']
+  selector: "app-game-page",
+  templateUrl: "./game-page.component.html",
+  styleUrls: ["./game-page.component.scss"]
 })
 export class GamePageComponent implements OnInit, OnDestroy {
   public loading = false;
@@ -26,9 +26,9 @@ export class GamePageComponent implements OnInit, OnDestroy {
     this.loading = true;
     this.subscription = this.route.paramMap.subscribe({
         next: params => {
-          const gameId = Number(params.get('id')) - 1;
-          const section = String(params.get('section'));
-          if (section === 'gamesData') {
+          const gameId = Number(params.get("id")) - 1;
+          const section = String(params.get("section"));
+          if (section === "gamesData") {
             this.subscription = this.loadGameFromGamesData(gameId).subscribe({
               next: (res) => {
                 this.gameData = res;
@@ -37,7 +37,7 @@ export class GamePageComponent implements OnInit, OnDestroy {
                 console.error(err);
               }
             });
-          } else if (section === 'freeGamesData') {
+          } else if (section === "freeGamesData") {
             this.subscription = this.loadGameFromFreeGamesData(gameId).subscribe({
               next: (res) => {
                 this.gameData = res;
@@ -46,7 +46,7 @@ export class GamePageComponent implements OnInit, OnDestroy {
                 console.error(err)
               }
             });
-          } else if (section === 'landscapeGamesData') {
+          } else if (section === "landscapeGamesData") {
             this.subscription = this.gamesService.getGameFromLandscapeGamesData(gameId).subscribe({
               next: (res) => {
                 this.gameData = res;

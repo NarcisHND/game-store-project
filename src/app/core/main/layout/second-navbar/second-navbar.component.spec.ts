@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { SecondNavbarComponent } from './second-navbar.component';
+import { SecondNavbarComponent } from "./second-navbar.component";
 
-describe('SecondNavbarComponent', () => {
+describe("SecondNavbarComponent", () => {
   let component: SecondNavbarComponent;
   let fixture: ComponentFixture<SecondNavbarComponent>;
 
@@ -17,7 +17,7 @@ describe('SecondNavbarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,7 +1,7 @@
-import {AfterViewInit, Directive, ElementRef, HostListener, Renderer2} from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, HostListener, Renderer2} from "@angular/core";
 
 @Directive({
-  selector: '[appHoverCarousel]'
+  selector: "[appHoverCarousel]"
 })
 export class HoverCarouselDirective implements AfterViewInit {
   private carouselItems!: NodeList;
@@ -10,20 +10,20 @@ export class HoverCarouselDirective implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.carouselItems = this.elRef.nativeElement.parentElement.querySelectorAll('.carousel-item');
+    this.carouselItems = this.elRef.nativeElement.parentElement.querySelectorAll(".carousel-item");
   }
 
-  @HostListener('mouseover')
+  @HostListener("mouseover")
   setId(): void {
     this.carouselItems.forEach((item: Node) => {
-      this.renderer.setAttribute(item, 'id', 'stopCarousel');
+      this.renderer.setAttribute(item, "id", "stopCarousel");
     });
   }
 
-  @HostListener('mouseleave')
+  @HostListener("mouseleave")
   removeId(): void {
     this.carouselItems.forEach((item: Node) => {
-      this.renderer.removeAttribute(item, 'id',);
+      this.renderer.removeAttribute(item, "id",);
     });
   }
 }

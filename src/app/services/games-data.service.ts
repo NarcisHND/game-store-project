@@ -15,39 +15,39 @@ export class GamesDataService {
   }
 
   getGameFromGamesData(id: number): Observable<GameModel> {
-    return this.http.get<GameModel>(environment.fireBaseUrl + 'gamesData/' + id + '.json');
+    return this.http.get<GameModel>(environment.fireBaseUrl + "gamesData/" + id + ".json");
   }
 
   getGameFromFreeGamesData(id: number): Observable<GameModel> {
-    return this.http.get<GameModel>(environment.fireBaseUrl + 'freeGamesData/' + id + '.json');
+    return this.http.get<GameModel>(environment.fireBaseUrl + "freeGamesData/" + id + ".json");
   }
 
   getGameFromLandscapeGamesData(id: number): Observable<GameModel> {
-    return this.http.get<GameModel>(environment.fireBaseUrl + 'landscapeGamesData/' + id + '.json');
+    return this.http.get<GameModel>(environment.fireBaseUrl + "landscapeGamesData/" + id + ".json");
   }
 
   getGamesTypesCard(): Observable<GamesTypeCardModel[]> {
-    return this.http.get<GamesTypeCardModel[]>(environment.fireBaseUrl + 'gamesTypesCard.json');
+    return this.http.get<GamesTypeCardModel[]>(environment.fireBaseUrl + "gamesTypesCard.json");
   }
 
   getGames(): Observable<GameModel[]> {
-    return this.http.get<GameModel[]>(environment.fireBaseUrl + 'gamesData.json');
+    return this.http.get<GameModel[]>(environment.fireBaseUrl + "gamesData.json");
   }
 
   getRecommendedGames(): Observable<RecommendedGameModel[]> {
-    return this.http.get<RecommendedGameModel[]>(environment.fireBaseUrl + 'recommendedGamesData.json');
+    return this.http.get<RecommendedGameModel[]>(environment.fireBaseUrl + "recommendedGamesData.json");
   }
 
   getLandscapeGames(): Observable<GameModel[]> {
-    return this.http.get<GameModel[]>(environment.fireBaseUrl + 'landscapeGamesData.json');
+    return this.http.get<GameModel[]>(environment.fireBaseUrl + "landscapeGamesData.json");
   }
 
   getFreeGames(): Observable<GameModel[]> {
-    return this.http.get<GameModel[]>(environment.fireBaseUrl + 'freeGamesData.json');
+    return this.http.get<GameModel[]>(environment.fireBaseUrl + "freeGamesData.json");
   }
 
   getNewGamingNews(): Observable<GamingNewsCardModel[]> {
-    return this.http.get<GamingNewsCardModel[]>(environment.fireBaseUrl + 'newGamingNewsCards.json');
+    return this.http.get<GamingNewsCardModel[]>(environment.fireBaseUrl + "newGamingNewsCards.json");
   }
 
   // fetchData() {

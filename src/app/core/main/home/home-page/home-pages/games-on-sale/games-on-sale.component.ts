@@ -1,12 +1,12 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from "@angular/core";
 import {GamesDataService} from "../../../../../../services/games-data.service";
 import {GameModel} from "../../../../../../services/interface/game.model";
 import {Subscription} from "rxjs";
 
 @Component({
-  selector: 'app-games-on-sale',
-  templateUrl: './games-on-sale.component.html',
-  styleUrls: ['./games-on-sale.component.scss']
+  selector: "app-games-on-sale",
+  templateUrl: "./games-on-sale.component.html",
+  styleUrls: ["./games-on-sale.component.scss"]
 })
 export class GamesOnSaleComponent implements OnInit, OnDestroy {
   public carouselRandomGames: GameModel[] = [];

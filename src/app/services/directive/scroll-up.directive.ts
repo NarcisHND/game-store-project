@@ -1,16 +1,16 @@
-import {Directive, ElementRef, HostListener} from '@angular/core';
+import {Directive, ElementRef, HostListener} from "@angular/core";
 
 @Directive({
-  selector: '[appScrollUp]'
+  selector: "[appScrollUp]"
 })
 export class ScrollUpDirective {
 
   constructor(private elRef: ElementRef) {
   }
 
-  @HostListener('click')
+  @HostListener("click")
   scrollUp(): void {
-    const selectNavbarElRef = this.elRef.nativeElement.closest('body').querySelector('.navbar');
+    const selectNavbarElRef = this.elRef.nativeElement.closest("body").querySelector(".navbar");
     selectNavbarElRef.scrollIntoView();
   }
 }

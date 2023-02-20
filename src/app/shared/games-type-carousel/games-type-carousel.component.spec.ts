@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { GamesTypeCarouselComponent } from './games-type-carousel.component';
+import { GamesTypeCarouselComponent } from "./games-type-carousel.component";
 
-describe('GamesTypeCarouselComponent', () => {
+describe("GamesTypeCarouselComponent", () => {
   let component: GamesTypeCarouselComponent;
   let fixture: ComponentFixture<GamesTypeCarouselComponent>;
 
@@ -17,7 +17,7 @@ describe('GamesTypeCarouselComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
