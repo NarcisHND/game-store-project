@@ -1,0 +1,17 @@
+<app-modal id="auth-modal">
+  <section class="auth-modal-section">
+    <button class="close-modal-btn" (click)="closeModal('auth-modal');">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="btn_container">
+      <button class="btn btn-success" [ngClass]="{'activeBtn': changeAuth === 'login'}"
+              (click)="changeAuthContent('login')">Login
+      </button>
+      <button class="btn btn-success" [ngClass]="{'activeBtn': changeAuth === 'register'}"
+              (click)="changeAuthContent('register')">Sign Up
+      </button>
+    </div>
+  </section>
+  <app-login *ngIf="changeAuth === 'login'"></app-login>
+  <app-register *ngIf="changeAuth === 'register'"></app-register>
+</app-modal>

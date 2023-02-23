@@ -1,0 +1,49 @@
+.auth-modal-section {
+  .close-modal-btn {
+    all: unset;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    cursor: pointer;
+
+    i {
+      color: $light-color-2;
+      font-size: $font-size-2;
+    }
+
+    &:hover i {
+      color: $light-color-3;
+    }
+  }
+
+  .btn_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 35rem;
+
+    button {
+      all: unset;
+      background-color: $light-color-1;
+      color: $light-color-2;
+      width: 100%;
+      font-size: $font-size-3;
+      padding: 1rem 3rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-align: center;
+
+      &:hover {
+        background-color: $light-color-3;
+      }
+    }
+  }
+
+  .activeBtn {
+    background-color: $light-color-3 !important;
+  }
+}
+
+
