@@ -10,6 +10,7 @@ import {
   GamesTypeCarouselPlaceholderComponent
 } from "./games-type-carousel/games-type-carousel-placeholder/games-type-carousel-placeholder.component";
 import {PaginationComponent} from "./pagination/pagination.component";
+import {ModalComponent} from "./modal/modal.component";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {PaginationComponent} from "./pagination/pagination.component";
     GamesTypeCarouselComponent,
     GamesTypeCarouselPlaceholderComponent,
     PaginationComponent,
+    ModalComponent,
   ],
   exports: [
     GameCardComponent,
@@ -27,6 +29,7 @@ import {PaginationComponent} from "./pagination/pagination.component";
     GamesTypeCarouselComponent,
     GamesTypeCarouselPlaceholderComponent,
     PaginationComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,

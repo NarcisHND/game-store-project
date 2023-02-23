@@ -14,12 +14,10 @@ export class TitleUppercasePipe implements PipeTransform {
         const secondWord: string = value.slice(searchEL + 1, value.length);
         const finalFWord: string = firstWord[0].toUpperCase().concat(firstWord.slice(1, firstWord.length));
         const finalSWord: string = secondWord[0].toUpperCase().concat(secondWord.slice(1, secondWord.length));
-        const finalWordForm: string = finalFWord.concat("-").concat(finalSWord);
-        finalValue = finalWordForm;
+        finalValue = finalFWord.concat("-").concat(finalSWord);
       }
     } else {
-      const upperC: string = value[0].toUpperCase().concat(value.slice(1, value.length));
-      finalValue = upperC;
+      finalValue = value[0].toUpperCase().concat(value.slice(1, value.length));
     }
 
     return finalValue;

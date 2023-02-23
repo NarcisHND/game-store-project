@@ -77,12 +77,9 @@
         </a>
       </li>
 
-      <li class="nav-item login_btn">
+      <li class="nav-item login_btn" (click)="openModal('auth-modal')">
         <p class="login_btn--text">Sign In</p>
-        <a class="nav-link"
-           routerLink="shopping-cart"
-           routerLinkActive="active"
-        >
+        <a class="nav-link">
           <mat-icon class="login_btn--icon">person</mat-icon>
         </a>
       </li>
@@ -90,6 +87,5 @@
   </div>
 </nav>
 
-
-
+<app-auth-modal></app-auth-modal>
 
